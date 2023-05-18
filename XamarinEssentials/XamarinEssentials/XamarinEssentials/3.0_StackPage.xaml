@@ -12,7 +12,7 @@
                 Platform="iOS">0, 20, 0, 0</On>
         </OnPlatform>
     </ContentPage.Padding>
-    <StackLayout
+    <!--<StackLayout
         Orientation="Horizontal"
         Padding="40"
         Spacing="20"
@@ -28,5 +28,5 @@
             Text="Label 2" />
         <Label
             Text="Label 3" />
-    </StackLayout>
+    </StackLayout>-->
 </ContentPage>
