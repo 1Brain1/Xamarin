@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamarinEssentials.StackLayout_Exercise_2">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <On
+                Platform="iOS">0, 20, 0, 0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout>
+        <StackLayout
+            Padding="10">
+            <Label
+                Text="Photo by bluefishds"
+                TextColor="Black" />
+        </StackLayout>
+        <Image
+            Source="https://previews.123rf.com/images/bluefishds/bluefishds2303/bluefishds230301471/199593397-alien-planet-generative-ai-artwork-rocks-and-lake.jpg" />
+        <StackLayout
+            Spacing="20"
+            Padding="10, 0"
+            Orientation="Horizontal">
+            <Button
+                Text="Like"
+                TextColor="DeepSkyBlue"
+                BackgroundColor="Transparent" />
+            <Button
+                Text="Comment"
+                TextColor="DeepSkyBlue"
+                BackgroundColor="Transparent" />
+            <Button
+                Text="Share"
+                TextColor="DeepSkyBlue"
+                BackgroundColor="Transparent" />
+        </StackLayout>
+        <StackLayout Padding="10">
+            <BoxView
+                Color="#f0f0f0"
+                HeightRequest="1" />
+            <Label
+                Text="700 likes"
+                TextColor="Black"
+                FontAttributes="Bold" />
+            <Label
+                Text="Alien Planet - Generative AI Artwork. Rocks and lake" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

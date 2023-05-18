@@ -29,6 +29,9 @@
     <Compile Update="3.1_StackLayout_Exercise_1.xaml.cs">
       <DependentUpon>3.1_StackLayout_Exercise_1.xaml</DependentUpon>
     </Compile>
+    <Compile Update="3.1_StackLayout_Exercise_2.xaml.cs">
+      <DependentUpon>3.1_StackLayout_Exercise_2.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +45,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Page1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="3.1_StackLayout_Exercise_2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
