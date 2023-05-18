@@ -17,7 +17,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="QuotesPage.xaml">
+    <Compile Update="3.0_StackPage.xaml.cs">
+      <DependentUpon>3.0_StackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="1.0_MainPage.xaml.cs">
+      <DependentUpon>1.0_MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="2.0_QuotesPage.xaml.cs">
+      <DependentUpon>2.0_QuotesPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="2.0_QuotesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="3.0_StackPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
