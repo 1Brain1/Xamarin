@@ -10,7 +10,7 @@ namespace XamarinEssentials
         {
             InitializeComponent();
 
-            MainPage = new StackPage();
+            MainPage = new StackLayout_Exercise_2();
         }
 
         protected override void OnStart()
