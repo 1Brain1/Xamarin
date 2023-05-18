@@ -1,0 +1,9 @@
+**/.vs
+**/obj
+**/.DS_Store
+.DS_Store
+**/bin
+**/Thumbs.db
+**/Resource.designer.cs
+src/.idea
+*.user
