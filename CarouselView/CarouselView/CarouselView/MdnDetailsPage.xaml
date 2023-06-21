@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CarouselView.MdnDetailsPage">
-    
+
     <StackLayout
         Spacing="0">
         <Frame
@@ -25,7 +25,7 @@
             Margin="0">
             <StackLayout
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.33}">
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
                 <CarouselView
                     Loop="False"
                     ItemsSource="{Binding Mdns}">
@@ -38,30 +38,72 @@
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand">
 
-                                    <StackLayout>
+                                    <Grid Padding="30,0,0,0"
+                                          RowDefinitions="*,Auto,Auto,*"
+                                          ColumnDefinitions="Auto, Auto, *">
                                         <Label
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="2"
                                             Text="{Binding MndNumber}"
                                             FontAttributes="Bold"
                                             TextColor="White"
                                             FontSize="Title" />
 
-                                        <Label
-                                            Text="{Binding Sim}"
-                                            FontAttributes="Bold"
-                                            TextColor="White"
-                                            FontSize="Title" />
+                                        <Frame
+                                            Padding="8,0,8,0"
+                                            Grid.Row="2"
+                                            CornerRadius="15"
+                                            BackgroundColor="{Binding StatusColor}">
+                                            <Label
+                                                HorizontalTextAlignment="Center"
+                                                Text="{Binding Status}"
+                                                TextColor="White"
+                                                FontSize="Micro" 
+                                                />
+                                        </Frame>
 
-                                    </StackLayout>
+                                        <Frame
+                                            Padding="8,0,8,0"
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            CornerRadius="15"
+                                            BackgroundColor="#F8617C">
+
+                                            <Label
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Center"
+                                                Text="! UPDATE PLAN"
+                                                TextColor="White"
+                                                FontSize="Micro" />
+                                        </Frame>
+
+                                    </Grid>
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
                 </CarouselView>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" >
+                <Label 
+                Text="SUBSCRIPTION"
+                    FontSize="Subtitle"
+                    FontAttributes="Bold"/>
+                <Frame
+                    Padding="8,0,8,0"
+                    Margin="0"
+                    BackgroundColor="#60E17C"
+                    CornerRadius="10">
+                    <Label 
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        TextColor="White"
+                        Text=" PAY"/>
+                </Frame>
 
             </StackLayout>
 
         </RelativeLayout>
-
-
     </StackLayout>
 </ContentPage>

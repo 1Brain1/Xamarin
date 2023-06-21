@@ -13,12 +13,11 @@
     SelectedTabColor="Red"
     UnselectedTabColor="Black">
 
-    <local:MonkeyPage
-        Title="MonkeyPage"
-        IconImageSource="ic_monkey.png"/>
-
     <local:MdnDetailsPage
         Title="MdnDetails" 
         IconImageSource="ic_mdn.png" />
-
+    
+    <local:MonkeyPage
+        Title="MonkeyPage"
+        IconImageSource="ic_monkey.png"/>
 </TabbedPage>
