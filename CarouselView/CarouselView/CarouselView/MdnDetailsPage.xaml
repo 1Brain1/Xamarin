@@ -28,7 +28,7 @@
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.33}">
                 <CarouselView
                     Loop="False"
-                    ItemsSource="{Binding MdnDtos}">
+                    ItemsSource="{Binding Mdns}">
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
@@ -39,7 +39,18 @@
                                     VerticalOptions="FillAndExpand">
 
                                     <StackLayout>
-                                        
+                                        <Label
+                                            Text="{Binding MndNumber}"
+                                            FontAttributes="Bold"
+                                            TextColor="White"
+                                            FontSize="Title" />
+
+                                        <Label
+                                            Text="{Binding Sim}"
+                                            FontAttributes="Bold"
+                                            TextColor="White"
+                                            FontSize="Title" />
+
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
