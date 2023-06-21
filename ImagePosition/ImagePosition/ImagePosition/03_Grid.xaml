@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ImagePosition.Grid">
+
+
+    <Grid
+        RowDefinitions="Auto,*,2*">
+        
+        <Image
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3"
+            Source="loginBackground.png"
+            Aspect="AspectFill" />
+
+        <ScrollView
+            Grid.Row="0"
+            Grid.ColumnSpan="3">
+
+            <StackLayout
+                
+                Margin="24,40"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand">
+
+                <Grid>
+                    <Label
+                        Margin="0,10"
+                        FontFamily="Icons"
+                        FontSize="12"
+                        HorizontalOptions="Start"
+                        Text="\uea02"
+                        VerticalOptions="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding GoSignUpCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <StackLayout
+                    Margin="0,15"
+                    Spacing="15">
+                    <Entry
+                        Keyboard="Email"
+                        Placeholder="Email" />
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="Password" />
+                </StackLayout>
+
+                <Label
+                    Padding="8"
+                    TextDecorations="Underline"
+                    HorizontalOptions="Center"
+                    Text="forgot_password">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding GoForgotPasswordCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Button
+                    Margin="0,20"
+                    AutomationId="LoginButton"
+                    FontFamily="Bold"
+                    Text="sign_in_caps" />
+
+            </StackLayout>
+
+        </ScrollView>
+
+        <RelativeLayout 
+            Grid.ColumnSpan="3"
+            Grid.Row="2">
+
+            <Label
+                Margin="0, 0, 20, 10"
+                VerticalTextAlignment="End"
+                HorizontalTextAlignment="End"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                Text="App version 1.0" />
+
+            <Image
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                Source="boom.png" />
+        </RelativeLayout>
+    </Grid>
+
+</ContentPage>

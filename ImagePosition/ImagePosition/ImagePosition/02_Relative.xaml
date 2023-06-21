@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImagePosition.Relative">
+    <RelativeLayout>
+
+        <Image
+            Source="loginBackground.png"
+            Aspect="AspectFill"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <Image
+            Source="boom.png"
+            RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, 
+                Property=Width,
+                Factor=0.5}" />
+
+
+        <ScrollView>
+
+            <StackLayout
+                Margin="24,40"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand">
+
+                <StackLayout
+                    Margin="0,15"
+                    Spacing="15">
+                    <Entry
+                        Keyboard="Email"
+                        Placeholder="Email" />
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="Password" />
+                </StackLayout>
+
+            </StackLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</ContentPage>
