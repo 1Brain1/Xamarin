@@ -24,8 +24,8 @@
         <StackLayout
             Grid.Row="1">
             <CarouselView
-                Loop="False"
-                ItemsSource="{Binding Mdns}">
+                x:Name="carouselView"
+                Loop="False">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Frame

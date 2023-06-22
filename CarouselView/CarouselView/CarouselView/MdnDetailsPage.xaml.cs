@@ -10,20 +10,16 @@ namespace CarouselView;
 [XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class MdnDetailsPage : ContentPage
 {
-    public ObservableCollection<MdnDto> Mdns { get; set; } = new();
-
     public MdnDetailsPage()
     {
         InitializeComponent();
 
-        BindingContext = this;
+        carouselView.ItemsSource = GetMdns();
     }
 
-    protected override void OnAppearing()
+    private ObservableCollection<MdnDto> GetMdns()
     {
-        base.OnAppearing();
-
-        var mdnList = new List<MdnDto>
+        return new ObservableCollection<MdnDto>
         {
             new MdnDto
             {
@@ -61,12 +57,5 @@ public partial class MdnDetailsPage : ContentPage
                 IsActive = true
             }
         };
-
-        Mdns?.Clear();
-
-        foreach (var mdn in mdnList)
-        {
-            Mdns.Add(mdn);
-        }
     }
 }
