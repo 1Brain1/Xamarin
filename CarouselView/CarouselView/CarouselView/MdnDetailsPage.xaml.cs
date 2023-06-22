@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CarouselView.Models;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
@@ -30,8 +31,7 @@ public partial class MdnDetailsPage : ContentPage
                 Sim = "89148000005758879720",
                 Imei = "1535500225374",
                 Provider = "Red",
-                Status = MdnDto.GetStatus(true),
-                StatusColor = MdnDto.GetStatusColor(true)
+                IsActive = true
             },
 
             new MdnDto
@@ -40,8 +40,7 @@ public partial class MdnDetailsPage : ContentPage
                 Sim = "89148000005758880256",
                 Imei = "990007043121315",
                 Provider = "Purple",
-                Status = MdnDto.GetStatus(false),
-                StatusColor = MdnDto.GetStatusColor(false)
+                IsActive = false
             },
 
             new MdnDto
@@ -50,8 +49,7 @@ public partial class MdnDetailsPage : ContentPage
                 Sim = "8901260853187564503",
                 Imei = "352051374249487",
                 Provider = "Purple",
-                Status = MdnDto.GetStatus(true),
-                StatusColor = MdnDto.GetStatusColor(true)
+                IsActive = true
             },
 
             new MdnDto
@@ -60,8 +58,7 @@ public partial class MdnDetailsPage : ContentPage
                 Sim = "",
                 Imei = "352051374614417",
                 Provider = "Red",
-                Status = MdnDto.GetStatus(true),
-                StatusColor = MdnDto.GetStatusColor(true)
+                IsActive = true
             }
         };
 
