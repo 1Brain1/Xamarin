@@ -4,62 +4,70 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CarouselView.MdnDetailsPage">
 
-    <StackLayout
-        Spacing="0">
-        <Frame
-            Padding="20,0,0,5"
-            HeightRequest="60"
-            CornerRadius="5">
+    <Grid
+        RowDefinitions="Auto, *, 2*">
+
+        <!--Hello-->
+        <StackLayout
+            Grid.Row="0"
+            HeightRequest="60">
             <Label
-                Padding="0"
+                Padding="30, 0, 0, 0"
                 Text="Hello, Mister!"
-                HorizontalTextAlignment="Start"
-                VerticalTextAlignment="End"
+                VerticalOptions="End"
                 TextColor="Black"
                 FontAttributes="Bold"
                 FontSize="Title" />
-        </Frame>
+        </StackLayout>
 
-        <RelativeLayout
-            Padding="0"
-            Margin="0">
-            <StackLayout
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
-                <CarouselView
-                    Loop="False"
-                    ItemsSource="{Binding Mdns}">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Frame
-                                    BorderColor="DarkGray"
-                                    BackgroundColor="#8668FB"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="FillAndExpand">
+        <!--Carousel-->
+        <StackLayout
+            Grid.Row="1">
+            <CarouselView
+                Loop="False"
+                ItemsSource="{Binding Mdns}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            HasShadow="True"
+                            BorderColor="DarkGray"
+                            BackgroundColor="{Binding ProviderColor}">
 
-                                    <Grid Padding="30,0,0,0"
-                                          RowDefinitions="*,Auto,Auto,*"
-                                          ColumnDefinitions="Auto, Auto, *">
-                                        <Label
-                                            Grid.Row="1"
-                                            Grid.ColumnSpan="2"
-                                            Text="{Binding MndNumber}"
-                                            FontAttributes="Bold"
-                                            TextColor="White"
-                                            FontSize="Title" />
+                            <Grid
+                                VerticalOptions="Center"
+                                ColumnDefinitions="Auto,*,*,Auto">
 
+                                <Label
+                                    Padding="0,0,5,0"
+                                    Grid.Column="0"
+                                    VerticalOptions="Center"
+                                    Text="&lt;"
+                                    TextColor="White"
+                                    FontSize="20" />
+
+                                <StackLayout
+                                    VerticalOptions="Center"
+                                    Grid.Column="1">
+                                    <Label
+                                        Text="{Binding MndNumber}"
+                                        FontAttributes="Bold"
+                                        TextColor="White"
+                                        FontSize="26" />
+
+                                    <StackLayout
+                                        Orientation="Horizontal">
                                         <Frame
+                                            HorizontalOptions="StartAndExpand"
                                             Padding="8,0,8,0"
                                             Grid.Row="2"
                                             CornerRadius="15"
                                             BackgroundColor="{Binding StatusColor}">
                                             <Label
                                                 HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Center"
                                                 Text="{Binding Status}"
                                                 TextColor="White"
-                                                FontSize="Micro" 
-                                                />
+                                                FontSize="Micro" />
                                         </Frame>
 
                                         <Frame
@@ -72,38 +80,150 @@
                                             <Label
                                                 HorizontalTextAlignment="Center"
                                                 VerticalTextAlignment="Center"
-                                                Text="! UPDATE PLAN"
+                                                Text="UPDATE PLAN"
                                                 TextColor="White"
                                                 FontSize="Micro" />
                                         </Frame>
+                                    </StackLayout>
+                                </StackLayout>
 
-                                    </Grid>
-                                </Frame>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-            </StackLayout>
 
-            <StackLayout Orientation="Horizontal" >
-                <Label 
+                                <Label
+                                    Grid.Column="3"
+                                    Padding="5,0,0,0"
+                                    VerticalOptions="Center"
+                                    Text="&gt;"
+                                    TextColor="White"
+                                    FontSize="20" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </StackLayout>
+
+        <!--Subscription & Plan-->
+        <Grid
+            BackgroundColor="Green"
+            Margin="20,10"
+            Grid.Row="2"
+            RowDefinitions="Auto, Auto"
+            ColumnDefinitions="Auto, *, Auto">
+
+            <!--Subscription Row-->
+            <Rectangle
+                Grid.Row="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="Yellow" />
+            <!--Subscription-->
+            <Label
+                Grid.Column="0"
                 Text="SUBSCRIPTION"
-                    FontSize="Subtitle"
-                    FontAttributes="Bold"/>
-                <Frame
-                    Padding="8,0,8,0"
-                    Margin="0"
-                    BackgroundColor="#60E17C"
-                    CornerRadius="10">
-                    <Label 
+                FontSize="Subtitle"
+                FontAttributes="Bold" />
+            <!--Eye-->
+            <StackLayout
+                Grid.Column="1"
+                Margin="5,0">
+                <Image
+                    HorizontalOptions="Start"
+                    Grid.Column="1"
+                    Source="ic_eye">
+                </Image>
+
+            </StackLayout>
+            <!--Pay-->
+            <Frame
+                Grid.Column="2"
+                Padding="8,0,8,0"
+                Margin="0"
+                BackgroundColor="#60E17C"
+                CornerRadius="15">
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Image
+                        Source="ic_card" />
+                    <Label
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="White"
-                        Text=" PAY"/>
+                        Text="PAY" />
+                </StackLayout>
+            </Frame>
+
+            <!--Subscription Row-->
+            <Rectangle
+                BackgroundColor="Blue"
+                Grid.Row="1"
+                Grid.ColumnSpan="3" />
+            <Grid
+                Grid.Row="1"
+                Grid.ColumnSpan="3">
+
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="#F2F2F2"
+                    Padding="7"
+                    CornerRadius="15">
+                    <StackLayout
+                        Orientation="Horizontal">
+                        <Frame
+                            VerticalOptions="Center"
+                            BackgroundColor="#FFB0BE"
+                            CornerRadius="13"
+                            Padding="10, 2, 10, 2">
+                            <Label
+                                Text="RED"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                TextColor="White" />
+                        </Frame>
+                        <Label
+                            VerticalOptions="Center"
+                            Text="TRAVEL 5G 30"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            TextColor="Black" />
+                    </StackLayout>
                 </Frame>
 
-            </StackLayout>
 
-        </RelativeLayout>
-    </StackLayout>
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="#F2F2F2"
+                    Padding="7"
+                    CornerRadius="15">
+
+                    <StackLayout
+                        Orientation="Horizontal"
+                        VerticalOptions="Center"
+                        HorizontalOptions="CenterAndExpand">
+
+                        <Image
+                            VerticalOptions="Center"
+                            Scale="0.6"
+                            Source="ic_calendar" />
+
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            Text="5 DAYS LEFT"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            TextColor="Black" />
+
+                        <Image
+                            Source="ic_warning" />
+                    </StackLayout>
+
+
+                </Frame>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
 </ContentPage>
