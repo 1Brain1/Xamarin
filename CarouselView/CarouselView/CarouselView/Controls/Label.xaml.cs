@@ -15,6 +15,12 @@ public partial class Label
     public static readonly BindableProperty TextColorProperty =
         BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(Label), Color.White, BindingMode.TwoWay);
 
+    public static readonly BindableProperty FontAttributesProperty =
+        BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(Button), FontAttributes.Bold, BindingMode.TwoWay);
+    
+    public static readonly BindableProperty TextTransformProperty =
+        BindableProperty.Create(nameof(FontAttributes), typeof(TextTransform), typeof(Button), TextTransform.Uppercase, BindingMode.TwoWay);
+
     public static readonly BindableProperty IsVisibleLabelProperty =
         BindableProperty.Create(nameof(IsVisibleLabel), typeof(bool), typeof(Label), true, BindingMode.TwoWay);
 
@@ -34,6 +40,18 @@ public partial class Label
     {
         get => (Color)GetValue(TextColorProperty);
         set => SetValue(TextColorProperty, value);
+    }
+
+    public FontAttributes FontAttributes
+    {
+        get => (FontAttributes)GetValue(FontAttributesProperty);
+        set => SetValue(FontAttributesProperty, value);
+    }
+
+    public TextTransform TextTransform
+    {
+        get => (TextTransform)GetValue(TextTransformProperty);
+        set => SetValue(TextTransformProperty, value);
     }
 
     public bool IsVisibleLabel
