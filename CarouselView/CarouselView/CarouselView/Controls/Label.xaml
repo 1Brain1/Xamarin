@@ -6,8 +6,7 @@
     x:Name="this"
     Padding="8,0,8,0"
     CornerRadius="15"
-    IsVisible="{Binding IsVisibleLabel, Source={x:Reference this}}"
-    BackgroundColor="{Binding LabelColor, Source={x:Reference this}}">
+    IsVisible="{Binding IsVisibleLabel, Source={x:Reference this}}">
     <Label
         HorizontalTextAlignment="Center"
         VerticalTextAlignment="Center"

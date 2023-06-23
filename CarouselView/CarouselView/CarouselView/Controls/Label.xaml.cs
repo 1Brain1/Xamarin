@@ -15,9 +15,6 @@ public partial class Label
     public static readonly BindableProperty TextColorProperty =
         BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(Label), Color.White, BindingMode.TwoWay);
 
-    public static readonly BindableProperty LabelColorProperty =
-        BindableProperty.Create(nameof(LabelColor), typeof(Color), typeof(Label), Color.Default, BindingMode.TwoWay);
-
     public static readonly BindableProperty IsVisibleLabelProperty =
         BindableProperty.Create(nameof(IsVisibleLabel), typeof(bool), typeof(Label), true, BindingMode.TwoWay);
 
@@ -37,12 +34,6 @@ public partial class Label
     {
         get => (Color)GetValue(TextColorProperty);
         set => SetValue(TextColorProperty, value);
-    }
-
-    public Color LabelColor
-    {
-        get => (Color)GetValue(LabelColorProperty);
-        set => SetValue(LabelColorProperty, value);
     }
 
     public bool IsVisibleLabel
