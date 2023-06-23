@@ -47,8 +47,16 @@
                                     FontSize="20" />
 
                                 <StackLayout
+                                    HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     Grid.Column="1">
+
+                                    <controls:Label
+                                        HorizontalOptions="Start"
+                                        TextColor="{Binding ProviderColor}"
+                                        FontSize="Large"
+                                        Text="{Binding Provider}"/>
+
                                     <Label
                                         Text="{Binding MndNumber}"
                                         FontAttributes="Bold"
@@ -57,7 +65,6 @@
 
                                     <Grid
                                         ColumnDefinitions="Auto, Auto">
-
                                         <controls:Label
                                             Grid.Column="0"
                                             Text="{Binding Status}"
@@ -67,7 +74,7 @@
                                         <controls:Label
                                             Grid.Column="1"
                                             Text="UPDATE PLAN"
-                                            BackgroundColor="#F8617C" 
+                                            BackgroundColor="#FBC472" 
                                             FontSize="Micro"/>
                                     </Grid>
                                 </StackLayout>
@@ -90,131 +97,117 @@
         <!--Subscription & Plan-->
         <Grid
             BackgroundColor="Green"
-            Margin="20,10"
+            Margin="10,10"
             Grid.Row="2"
             RowDefinitions="Auto, Auto"
             ColumnDefinitions="Auto, *, Auto">
 
-            <!--Subscription Row-->
-            <Rectangle
-                Grid.Row="0"
-                Grid.ColumnSpan="3"
-                BackgroundColor="Yellow" />
             <!--Subscription-->
             <Label
                 Grid.Column="0"
                 Text="SUBSCRIPTION"
                 FontSize="Subtitle"
-                FontAttributes="Bold" />
-            <!--Eye-->
-            <StackLayout
-                Grid.Column="1"
-                Margin="5,0">
-                <Image
-                    HorizontalOptions="Start"
-                    Grid.Column="1"
-                    Source="ic_eye">
-                </Image>
+                FontAttributes="Bold" 
+                TextColor="#514D4D"/>
 
-            </StackLayout>
-            <!--Pay-->
-
+            <!--History-->
             <controls:Button
                 Grid.Column="2"
                 BackgroundColor="#60E17C"
                 Source="ic_card"
-                Text="PAY" />
+                Text="HISTORY" />
 
-            <!--<Frame
-                Grid.Column="2"
-                Padding="8,0,8,0"
-                Margin="0"
-                BackgroundColor="#60E17C"
-                CornerRadius="15">
-                <StackLayout
-                    Orientation="Horizontal">
-                    <Image
-                        Source="ic_card" />
-                    <Label
-                        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center"
-                        TextColor="White"
-                        Text="PAY" />
-                </StackLayout>
-            </Frame>-->
-
-            <!--Subscription Row-->
-            <Rectangle
-                BackgroundColor="Blue"
-                Grid.Row="1"
-                Grid.ColumnSpan="3" />
             <Grid
                 Grid.Row="1"
+                Grid.RowSpan="2"
                 Grid.ColumnSpan="3">
 
                 <Frame
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    BackgroundColor="#F2F2F2"
-                    Padding="7"
-                    CornerRadius="15">
-                    <StackLayout
-                        Orientation="Horizontal">
-                        <Frame
-                            VerticalOptions="Center"
-                            BackgroundColor="#FFB0BE"
-                            CornerRadius="13"
-                            Padding="10, 2, 10, 2">
-                            <Label
-                                Text="RED"
-                                FontAttributes="Bold"
-                                FontSize="15"
-                                TextColor="White" />
-                        </Frame>
-                        <Label
-                            VerticalOptions="Center"
-                            Text="TRAVEL 5G 30"
-                            FontAttributes="Bold"
-                            FontSize="15"
-                            TextColor="Black" />
-                    </StackLayout>
-                </Frame>
+                    Padding="0,10"
+                    BackgroundColor="#D7D7D7" 
+                    CornerRadius="10">
 
+                    <Grid
+                        BackgroundColor="Aqua"
+                        RowDefinitions="Auto,*">
+
+                        <Image 
+                            Grid.RowSpan="2"
+                            Source="ic_chart.png"/>
+
+                        <StackLayout
+                            VerticalOptions="Center"
+                            BackgroundColor="Red"
+                            Grid.Column="1"
+                            Grid.RowSpan="2">
+                            <Label
+                                Text="12 GB"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="1" 
+                                Text="LEFT OF 124"
+                                FontSize="9"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+                        </StackLayout>
+
+                    </Grid>
+                </Frame>
 
                 <Frame
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    BackgroundColor="#F2F2F2"
-                    Padding="7"
-                    CornerRadius="15">
+                Padding="0,10"
+                Grid.Column="1"
+                BackgroundColor="#D7D7D7" 
+                CornerRadius="10">
+                    <Grid
+                    BackgroundColor="Aqua">
+                        <Image Grid.RowSpan="2"
+                           Grid.Column="0"/>
+                        <Label 
+                        Grid.Column="1" 
+                        Text="12 GB"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                        <Label 
+                        Grid.Row="1"
+                        Grid.Column="1" 
+                        Text="LEFT OF 124"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
 
-                    <StackLayout
-                        Orientation="Horizontal"
-                        VerticalOptions="Center"
-                        HorizontalOptions="CenterAndExpand">
-
-                        <Image
-                            VerticalOptions="Center"
-                            Scale="0.6"
-                            Source="ic_calendar" />
-
-                        <Label
-                            HorizontalTextAlignment="Center"
-                            VerticalTextAlignment="Center"
-                            Text="5 DAYS LEFT"
-                            FontAttributes="Bold"
-                            FontSize="15"
-                            TextColor="Black" />
-
-                        <Image
-                            Source="ic_warning" />
-                    </StackLayout>
-
-
+                    </Grid>
                 </Frame>
 
+                <Frame
+                Padding="0,10"
+                Grid.Column="2"
+                BackgroundColor="#D7D7D7" 
+                CornerRadius="10">
+                    <Grid
+                    BackgroundColor="Aqua">
+                        <Image Grid.RowSpan="2"
+                           Grid.Column="0"/>
+                        <Label 
+                        Grid.Column="1" 
+                        Text="12 GB"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                        <Label 
+                        Grid.Row="1"
+                        Grid.Column="1" 
+                        Text="LEFT OF 124"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+
+                    </Grid>
+                </Frame>
             </Grid>
 
+            <Label Grid.Row="3"/>
+            <Label Grid.Row="4"/>
+            <Label Grid.Row="5"/>
         </Grid>
 
     </Grid>
