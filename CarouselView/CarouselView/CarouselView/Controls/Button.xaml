@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CarouselView.Controls.Button"
     x:Name="This"
-    Padding="8,0,8,0"
-    CornerRadius="15">
+    Padding="10,0"
+    CornerRadius="10">
     <StackLayout
         HorizontalOptions="Center"
         Orientation="Horizontal">
@@ -19,6 +19,7 @@
             VerticalTextAlignment="Center"
             Text="{Binding Text, Source={x:Reference This}}"
             TextColor="{Binding TextColor, Source={x:Reference This}}"
+            FontAttributes="{Binding FontAttributes, Source={x:Reference This}}"
             FontSize="{Binding FontSize, Source={x:Reference This}}" />
     </StackLayout>
     <Frame.GestureRecognizers>
