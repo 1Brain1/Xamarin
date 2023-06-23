@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.Controls.Label"
+    x:Name="this"
+    Padding="8,0,8,0"
+    CornerRadius="15"
+    IsVisible="{Binding IsVisibleLabel, Source={x:Reference this}}"
+    BackgroundColor="{Binding LabelColor, Source={x:Reference this}}">
+    <Label
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"
+        Text="{Binding Text, Source={x:Reference this}}"
+        TextColor="{Binding TextColor, Source={x:Reference this}}"
+        FontSize="{Binding FontSize, Source={x:Reference this}}" />
+</Frame>
