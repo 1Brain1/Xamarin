@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
+    xmlns:controls="clr-namespace:CarouselView.Controls"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CarouselView.MdnDetailsPage">
@@ -56,32 +57,18 @@
 
                                     <Grid
                                         ColumnDefinitions="Auto, Auto">
-                                        <Frame
+
+                                        <controls:Label
                                             Grid.Column="0"
-                                            Padding="8,0,8,0"
-                                            CornerRadius="15"
-                                            BackgroundColor="{Binding StatusColor}">
-                                            <Label
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                Text="{Binding Status}"
-                                                TextColor="White"
-                                                FontSize="Micro" />
-                                        </Frame>
+                                            Text="{Binding Status}"
+                                            BackgroundColor="{Binding StatusColor}" 
+                                            FontSize="Micro"/>
 
-                                        <Frame
+                                        <controls:Label
                                             Grid.Column="1"
-                                            Padding="8,0,8,0"
-                                            CornerRadius="15"
-                                            BackgroundColor="#F8617C">
-
-                                            <Label
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                Text="UPDATE PLAN"
-                                                TextColor="White"
-                                                FontSize="Micro" />
-                                        </Frame>
+                                            Text="UPDATE PLAN"
+                                            BackgroundColor="#F8617C" 
+                                            FontSize="Micro"/>
                                     </Grid>
                                 </StackLayout>
 
@@ -131,7 +118,14 @@
 
             </StackLayout>
             <!--Pay-->
-            <Frame
+
+            <controls:Button
+                Grid.Column="2"
+                BackgroundColor="#60E17C"
+                Source="ic_card"
+                Text="PAY" />
+
+            <!--<Frame
                 Grid.Column="2"
                 Padding="8,0,8,0"
                 Margin="0"
@@ -147,7 +141,7 @@
                         TextColor="White"
                         Text="PAY" />
                 </StackLayout>
-            </Frame>
+            </Frame>-->
 
             <!--Subscription Row-->
             <Rectangle
