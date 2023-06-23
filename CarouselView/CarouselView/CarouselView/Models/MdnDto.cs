@@ -25,15 +25,15 @@ public class MdnDto
 
     private static string SetStatusColor(bool isActive)
     {
-        return isActive ? "#60E17C" : "Red";
+        return isActive ? "#81DC95" : "#808080";
     }
 
     private static string SetProviderColor(string provider)
     {
         return provider switch
         {
-            nameof(LegacyCode.Red) => "#FFB0BE",
-            nameof(LegacyCode.Purple) => "#E1D2FF",
+            nameof(LegacyCode.Red) => "#FB8997",
+            nameof(LegacyCode.Purple) => "#AB97FA",
             _ => "Blue"
         };
     }
