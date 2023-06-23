@@ -54,12 +54,11 @@
                                         TextColor="White"
                                         FontSize="26" />
 
-                                    <StackLayout
-                                        Orientation="Horizontal">
+                                    <Grid
+                                        ColumnDefinitions="Auto, Auto">
                                         <Frame
-                                            HorizontalOptions="StartAndExpand"
+                                            Grid.Column="0"
                                             Padding="8,0,8,0"
-                                            Grid.Row="2"
                                             CornerRadius="15"
                                             BackgroundColor="{Binding StatusColor}">
                                             <Label
@@ -71,9 +70,8 @@
                                         </Frame>
 
                                         <Frame
-                                            Padding="8,0,8,0"
-                                            Grid.Row="2"
                                             Grid.Column="1"
+                                            Padding="8,0,8,0"
                                             CornerRadius="15"
                                             BackgroundColor="#F8617C">
 
@@ -84,7 +82,7 @@
                                                 TextColor="White"
                                                 FontSize="Micro" />
                                         </Frame>
-                                    </StackLayout>
+                                    </Grid>
                                 </StackLayout>
 
 
