@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.Controls.Card"
+    x:Name="This"
+    Padding="5"
+    CornerRadius="15">
+    <Grid
+        HorizontalOptions="Center"
+        RowDefinitions="Auto,*">
+        <Image
+            Grid.Column="0"
+            Grid.RowSpan="2"
+            IsVisible="{Binding IsIconVisible, Source={x:Reference This}}"
+            Source="{Binding Source, Source={x:Reference This}}"
+            Scale="{Binding IconScale, Source={x:Reference This}}"/>
+        <StackLayout
+            VerticalOptions="Center"
+            Grid.Column="1"
+            Grid.RowSpan="2">
+            <Label
+                Text="{Binding TextFirstRow, Source={x:Reference This}}"
+                TextColor="{Binding TextColorFirstRow, Source={x:Reference This}}"
+                FontAttributes="{Binding FontAttributesFirstRow, Source={x:Reference This}}"
+                FontSize="{Binding FontSizeFirstRow, Source={x:Reference This}}"
+                TextTransform="{Binding TextTransformFirstRow, Source={x:Reference This}}" />
+            <Label
+                Text="{Binding TextSecondRow, Source={x:Reference This}}"
+                TextColor="{Binding TextColorSecondRow, Source={x:Reference This}}"
+                FontAttributes="{Binding FontAttributesSecondRow, Source={x:Reference This}}"
+                FontSize="{Binding FontSizeSecondRow, Source={x:Reference This}}"
+                TextTransform="{Binding TextTransformSecomdRow, Source={x:Reference This}}" />
+        </StackLayout>
+    </Grid>
+</Frame>
