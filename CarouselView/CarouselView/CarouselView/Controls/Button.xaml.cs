@@ -19,6 +19,9 @@ public partial class Button
     public static readonly BindableProperty FontAttributesProperty =
         BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(Button), FontAttributes.Bold, BindingMode.TwoWay);
 
+    public static readonly BindableProperty TextTransformProperty =
+        BindableProperty.Create(nameof(TextTransform), typeof(TextTransform), typeof(Button), TextTransform.Uppercase, BindingMode.TwoWay);
+
     public static readonly BindableProperty IsIconVisibleProperty =
         BindableProperty.Create(nameof(IsIconVisible), typeof(bool), typeof(Button), true, BindingMode.TwoWay);
     
@@ -32,6 +35,7 @@ public partial class Button
     public Button()
     {
         InitializeComponent();
+        //TODO: Finish with GestureRecognizers
     }
 
     public string Text
@@ -46,6 +50,7 @@ public partial class Button
         get => (double)GetValue(FontSizeProperty);
         set => SetValue(FontSizeProperty, value);
     }
+
     public Color TextColor
     {
         get => (Color)GetValue(TextColorProperty);
@@ -56,6 +61,12 @@ public partial class Button
     {
         get => (FontAttributes)GetValue(FontAttributesProperty);
         set => SetValue(FontAttributesProperty, value);
+    }
+
+    public TextTransform TextTransform
+    {
+        get => (TextTransform)GetValue(TextTransformProperty);
+        set => SetValue(TextTransformProperty, value);
     }
 
     public bool IsIconVisible

@@ -19,7 +19,7 @@ public partial class Label
         BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(Button), FontAttributes.Bold, BindingMode.TwoWay);
     
     public static readonly BindableProperty TextTransformProperty =
-        BindableProperty.Create(nameof(FontAttributes), typeof(TextTransform), typeof(Button), TextTransform.Uppercase, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(TextTransform), typeof(TextTransform), typeof(Button), TextTransform.Uppercase, BindingMode.TwoWay);
 
     public static readonly BindableProperty IsVisibleLabelProperty =
         BindableProperty.Create(nameof(IsVisibleLabel), typeof(bool), typeof(Label), true, BindingMode.TwoWay);

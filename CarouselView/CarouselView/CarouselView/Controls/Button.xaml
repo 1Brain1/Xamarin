@@ -20,7 +20,8 @@
             Text="{Binding Text, Source={x:Reference This}}"
             TextColor="{Binding TextColor, Source={x:Reference This}}"
             FontAttributes="{Binding FontAttributes, Source={x:Reference This}}"
-            FontSize="{Binding FontSize, Source={x:Reference This}}" />
+            FontSize="{Binding FontSize, Source={x:Reference This}}"
+            TextTransform="{Binding TextTransform, Source={x:Reference This}}" />
     </StackLayout>
     <Frame.GestureRecognizers>
         <TapGestureRecognizer
