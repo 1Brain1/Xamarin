@@ -13,13 +13,13 @@ public partial class Card
         BindableProperty.Create(nameof(TextColorFirstRow), typeof(Color), typeof(Card), Color.White, BindingMode.TwoWay);
 
     public static readonly BindableProperty FontAttributesFirstRowProperty =
-        BindableProperty.Create(nameof(FontAttributesFirstRow), typeof(FontAttributes), typeof(Button), FontAttributes.Bold, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(FontAttributesFirstRow), typeof(FontAttributes), typeof(Card), FontAttributes.Bold, BindingMode.TwoWay);
 
     public static readonly BindableProperty FontSizeFirstRowProperty =
         BindableProperty.Create(nameof(FontSizeFirstRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
 
     public static readonly BindableProperty TextTransformFirstRowProperty =
-        BindableProperty.Create(nameof(TextTransformFirstRow), typeof(TextTransform), typeof(Button), TextTransform.Uppercase, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(TextTransformFirstRow), typeof(TextTransform), typeof(Card), TextTransform.Uppercase, BindingMode.TwoWay);
 
     public static readonly BindableProperty TextSecondRowProperty =
         BindableProperty.Create(nameof(TextSecondRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
@@ -28,13 +28,13 @@ public partial class Card
         BindableProperty.Create(nameof(TextColorSecondRow), typeof(Color), typeof(Card), Color.White, BindingMode.TwoWay);
 
     public static readonly BindableProperty FontAttributesSecondRowProperty =
-        BindableProperty.Create(nameof(FontAttributesSecondRow), typeof(FontAttributes), typeof(Button), FontAttributes.Bold, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(FontAttributesSecondRow), typeof(FontAttributes), typeof(Card), FontAttributes.Bold, BindingMode.TwoWay);
 
     public static readonly BindableProperty FontSizeSecondRowProperty =
         BindableProperty.Create(nameof(FontSizeSecondRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
 
     public static readonly BindableProperty TextTransformSecomdRowProperty =
-        BindableProperty.Create(nameof(TextTransformSecomdRow), typeof(TextTransform), typeof(Button), TextTransform.Uppercase, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(TextTransformSecomdRow), typeof(TextTransform), typeof(Card), TextTransform.Uppercase, BindingMode.TwoWay);
 
     public static readonly BindableProperty IsIconVisibleProperty =
         BindableProperty.Create(nameof(IsIconVisible), typeof(bool), typeof(Card), true, BindingMode.TwoWay);
