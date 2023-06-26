@@ -27,13 +27,14 @@
             Grid.Column="1">
 
             <controls:Label
+                BackgroundColor="White"
                 HorizontalOptions="Start"
                 TextColor="{Binding ProviderColor}"
                 FontSize="Large"
                 Text="{Binding Provider}"/>
 
             <Label
-                Text="{Binding MndNumber}"
+                Text="{Binding Mdn}"
                 FontAttributes="Bold"
                 TextColor="White"
                 FontSize="26" />

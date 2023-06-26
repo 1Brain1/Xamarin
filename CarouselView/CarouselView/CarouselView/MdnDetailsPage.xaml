@@ -64,9 +64,8 @@
             </StackLayout>
 
             <!--Cards-->
-            <StackLayout
-                Grid.Row="1"
-                Orientation="Horizontal">
+            <Grid
+                Grid.Row="1">
                 <controls:Card
                     Grid.Column="0"
                     BackgroundColor="#D7D7D7" 
@@ -88,11 +87,11 @@
                     TextFirstRow="50 sms"
                     TextSecondRow="Left of 124"
                     FontSizeSecondRow="9" />
-            </StackLayout>
+            </Grid>
 
             <BoxView
                 Grid.Row="2"
-                HeightRequest="2"
+                HeightRequest="1"
                 BackgroundColor="#F2F2F2"/>
 
             <!--Details-->

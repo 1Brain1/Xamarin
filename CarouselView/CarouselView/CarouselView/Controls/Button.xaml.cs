@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +15,7 @@ public partial class Button
 
     public static readonly BindableProperty TextColorProperty =
         BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(Button), Color.White, BindingMode.TwoWay);
-    
+
     public static readonly BindableProperty FontAttributesProperty =
         BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(Button), FontAttributes.Bold, BindingMode.TwoWay);
 
@@ -25,20 +24,19 @@ public partial class Button
 
     public static readonly BindableProperty IsIconVisibleProperty =
         BindableProperty.Create(nameof(IsIconVisible), typeof(bool), typeof(Button), true, BindingMode.TwoWay);
-    
+
     public static readonly BindableProperty SourceProperty =
         BindableProperty.Create(nameof(Source), typeof(ImageSource), typeof(Button), default(ImageSource), BindingMode.TwoWay);
-    
+
     public static readonly BindableProperty IconScaleProperty =
         BindableProperty.Create(nameof(IconScale), typeof(double), typeof(Button), 1d, BindingMode.TwoWay);
 
-    public static readonly BindableProperty TapCommandProperty = 
+    public static readonly BindableProperty TapCommandProperty =
         BindableProperty.Create(nameof(TapCommand), typeof(ICommand), typeof(Button), default(ICommand), BindingMode.TwoWay);
 
     public Button()
     {
         InitializeComponent();
-        //TODO: Finish with GestureRecognizers
     }
 
     public string Text
