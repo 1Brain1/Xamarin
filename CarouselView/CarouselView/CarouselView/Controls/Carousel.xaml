@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:CarouselView.Controls"
+    x:Name="This"
+    x:Class="CarouselView.Controls.Carousel"
+    HasShadow="True"
+    BorderColor="DarkGray"
+    BackgroundColor="{Binding ProviderColor}">
+
+    <Grid
+        VerticalOptions="Center"
+        ColumnDefinitions="Auto,*,*,Auto">
+
+        <!--<Label
+            Padding="0,0,5,0"
+            Grid.Column="0"
+            VerticalOptions="Center"
+            Text="&lt;"
+            TextColor="White"
+            FontSize="20" />-->
+
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Grid.Column="1">
+
+            <controls:Label
+                HorizontalOptions="Start"
+                TextColor="{Binding ProviderColor}"
+                FontSize="Large"
+                Text="{Binding Provider}"/>
+
+            <Label
+                Text="{Binding MndNumber}"
+                FontAttributes="Bold"
+                TextColor="White"
+                FontSize="26" />
+
+            <Grid
+                ColumnDefinitions="Auto, Auto">
+                <controls:Label
+                    Grid.Column="0"
+                    Text="{Binding Status}"
+                    BackgroundColor="{Binding StatusColor}" 
+                    FontSize="Micro"/>
+
+                <controls:Label
+                    Grid.Column="1"
+                    Text="UPDATE PLAN"
+                    BackgroundColor="#FBC472" 
+                    FontSize="Micro"/>
+            </Grid>
+        </StackLayout>
+
+        <!--<Label
+            Grid.Column="3"
+            Padding="5,0,0,0"
+            VerticalOptions="Center"
+            Text="&gt;"
+            TextColor="White"
+            FontSize="20" />-->
+    </Grid>
+</Frame>
