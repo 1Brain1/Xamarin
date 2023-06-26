@@ -6,7 +6,7 @@
     x:Class="CarouselView.MdnDetailsPage">
 
     <Grid
-        RowDefinitions="Auto, *, 2*">
+        RowDefinitions="Auto, *, 3*">
 
         <!--Hello-->
         <StackLayout
@@ -33,65 +33,7 @@
                 Loop="False">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Frame
-                            HasShadow="True"
-                            BorderColor="DarkGray"
-                            BackgroundColor="{Binding ProviderColor}">
-
-                            <Grid
-                                VerticalOptions="Center"
-                                ColumnDefinitions="Auto,*,*,Auto">
-
-                                <Label
-                                    Padding="0,0,5,0"
-                                    Grid.Column="0"
-                                    VerticalOptions="Center"
-                                    Text="&lt;"
-                                    TextColor="White"
-                                    FontSize="20" />
-
-                                <StackLayout
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    Grid.Column="1">
-
-                                    <controls:Label
-                                        HorizontalOptions="Start"
-                                        TextColor="{Binding ProviderColor}"
-                                        FontSize="Large"
-                                        Text="{Binding Provider}"/>
-
-                                    <Label
-                                        Text="{Binding MndNumber}"
-                                        FontAttributes="Bold"
-                                        TextColor="White"
-                                        FontSize="26" />
-
-                                    <Grid
-                                        ColumnDefinitions="Auto, Auto">
-                                        <controls:Label
-                                            Grid.Column="0"
-                                            Text="{Binding Status}"
-                                            BackgroundColor="{Binding StatusColor}" 
-                                            FontSize="Micro"/>
-
-                                        <controls:Label
-                                            Grid.Column="1"
-                                            Text="UPDATE PLAN"
-                                            BackgroundColor="#FBC472" 
-                                            FontSize="Micro"/>
-                                    </Grid>
-                                </StackLayout>
-
-                                <Label
-                                    Grid.Column="3"
-                                    Padding="5,0,0,0"
-                                    VerticalOptions="Center"
-                                    Text="&gt;"
-                                    TextColor="White"
-                                    FontSize="20" />
-                            </Grid>
-                        </Frame>
+                        <controls:Carousel />
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
@@ -107,7 +49,6 @@
             <!--Subscription-->
             <StackLayout
                 Orientation="Horizontal">
-
                 <Label
                     Text="SUBSCRIPTION"
                     FontSize="Subtitle"
@@ -126,7 +67,6 @@
             <StackLayout
                 Grid.Row="1"
                 Orientation="Horizontal">
-
                 <controls:Card
                     Grid.Column="0"
                     BackgroundColor="#D7D7D7" 
@@ -134,7 +74,6 @@
                     TextFirstRow="12 gb"
                     TextSecondRow="Left of 124"
                     FontSizeSecondRow="9" />
-
                 <controls:Card
                     Grid.Column="1"
                     BackgroundColor="#D7D7D7" 
@@ -142,7 +81,6 @@
                     TextFirstRow="20 min"
                     TextSecondRow="Left of 124"
                     FontSizeSecondRow="9" />
-
                 <controls:Card
                     Grid.Column="2"
                     BackgroundColor="#D7D7D7" 
@@ -160,7 +98,6 @@
             <!--Details-->
             <StackLayout
                 Grid.Row="3">
-
                 <Grid
                     VerticalOptions="FillAndExpand"
                     RowDefinitions="Auto,*,Auto">
@@ -181,27 +118,30 @@
                             FontSize="Subtitle"
                             FontAttributes="Bold" 
                             TextColor="#514D4D"/>
-
                     </StackLayout>
 
                     <!--Date-->
                     <StackLayout Grid.Row="1">
                         <Frame
-                            Margin="20,0"
+                            Margin="10,0"
                             Padding="20"
                             CornerRadius="10"
                             BackgroundColor="#F2F2F2">
                             <StackLayout>
                                 <Label
                                     Text="PURPLE UNL Talk, Text &amp; Data w/30GB High Speed"
-                                    FontSize="Small"
+                                    FontSize="Micro"
                                     TextColor="#8E8A8A"/>
-                                <StackLayout 
+                                <StackLayout
+                                    Padding="0"
+                                    Margin="0"
                                     Orientation="Horizontal">
                                     <Image
-                                        Scale="0.8"
+                                        Scale="0.5"
                                         Source="ic_calendar"/>
-                                    <DatePicker 
+                                    <DatePicker
+                                        FontSize="Micro"
+                                        IsEnabled="False"
                                         Date="05/05/2023"
                                         TextColor="#8E8A8A"/>
                                     <Label 
@@ -210,9 +150,11 @@
                                         TextColor="#8E8A8A"
                                         FontSize="Title"/>
                                     <Image
-                                        Scale="0.8"
+                                        Scale="0.5"
                                         Source="ic_calendar"/>
                                     <DatePicker
+                                        FontSize="Micro"
+                                        IsEnabled="False"
                                         Date="06/05/2023"
                                         TextColor="#8E8A8A"/>
                                 </StackLayout>
@@ -236,7 +178,11 @@
                             HorizontalOptions="StartAndExpand"
                             BackgroundColor="#60E17C"
                             Text="Change Plan" 
-                            Source="ic_change"/>
+                            Source="ic_change">
+                            <controls:Button.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Test}" /> 
+                            </controls:Button.GestureRecognizers>
+                        </controls:Button>
                     </Grid>
                 </Grid>
 

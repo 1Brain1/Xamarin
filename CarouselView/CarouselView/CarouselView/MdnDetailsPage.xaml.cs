@@ -1,5 +1,5 @@
 ﻿using CarouselView.Models;
-using System.Collections.Generic;
+using System;
 using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
@@ -15,6 +15,11 @@ public partial class MdnDetailsPage : ContentPage
         InitializeComponent();
 
         carouselView.ItemsSource = GetMdns();
+    }
+
+    public async void Test(object sender, EventArgs e)
+    {
+        await DisplayAlert("Attention", "Wrong Email or Password", "Ok");
     }
 
     private ObservableCollection<MdnDto> GetMdns()
