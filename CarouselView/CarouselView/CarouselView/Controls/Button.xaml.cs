@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Windows.Input;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace CarouselView.Controls;
@@ -6,7 +8,6 @@ namespace CarouselView.Controls;
 [XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class Button
 {
-
     public static readonly BindableProperty TextProperty =
         BindableProperty.Create(nameof(Text), typeof(string), typeof(Button), string.Empty, BindingMode.TwoWay);
 
@@ -31,6 +32,8 @@ public partial class Button
     public static readonly BindableProperty IconScaleProperty =
         BindableProperty.Create(nameof(IconScale), typeof(double), typeof(Button), 1d, BindingMode.TwoWay);
 
+    public static readonly BindableProperty TapCommandProperty = 
+        BindableProperty.Create(nameof(TapCommand), typeof(ICommand), typeof(Button), default(ICommand), BindingMode.TwoWay);
 
     public Button()
     {
@@ -85,5 +88,11 @@ public partial class Button
     {
         get => (double)GetValue(IconScaleProperty);
         set => SetValue(IconScaleProperty, value);
+    }
+
+    public ICommand TapCommand
+    {
+        get => (ICommand)GetValue(TapCommandProperty);
+        set => SetValue(TapCommandProperty, value);
     }
 }

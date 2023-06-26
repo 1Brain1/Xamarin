@@ -22,9 +22,5 @@
             FontAttributes="{Binding FontAttributes, Source={x:Reference This}}"
             FontSize="{Binding FontSize, Source={x:Reference This}}"
             TextTransform="{Binding TextTransform, Source={x:Reference This}}" />
-    </StackLayout>
-    <Frame.GestureRecognizers>
-        <TapGestureRecognizer
-            Command="{Binding GoSignUpCommand}" />
-    </Frame.GestureRecognizers>
+    </StackLayout>    
 </Frame>
