@@ -2,9 +2,9 @@
 
 namespace CarouselView.Models;
 
-public class MdnDto
+public class Purchases
 {
-    public string MndNumber { get; set; }
+    public string Mdn { get; set; }
     public string Sim { get; set; }
     public string Imei { get; set; }
 
@@ -32,7 +32,7 @@ public class MdnDto
     {
         return provider switch
         {
-            nameof(LegacyCode.Red) => "#FB8997",
+            nameof(LegacyCode.Red) => "#E25B5B",
             nameof(LegacyCode.Purple) => "#AB97FA",
             _ => "Blue"
         };
