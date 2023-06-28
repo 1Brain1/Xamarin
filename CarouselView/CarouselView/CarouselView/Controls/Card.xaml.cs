@@ -9,6 +9,9 @@ public partial class Card
     public static readonly BindableProperty TextFirstRowProperty =
         BindableProperty.Create(nameof(TextFirstRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
 
+    public static readonly BindableProperty ValueFirstRowProperty =
+        BindableProperty.Create(nameof(ValueFirstRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
+
     public static readonly BindableProperty TextColorFirstRowProperty =
         BindableProperty.Create(nameof(TextColorFirstRow), typeof(Color), typeof(Card), Color.White, BindingMode.TwoWay);
 
@@ -24,6 +27,9 @@ public partial class Card
     public static readonly BindableProperty TextSecondRowProperty =
         BindableProperty.Create(nameof(TextSecondRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
 
+    public static readonly BindableProperty ValueSecondRowProperty =
+        BindableProperty.Create(nameof(ValueSecondRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
+
     public static readonly BindableProperty TextColorSecondRowProperty =
         BindableProperty.Create(nameof(TextColorSecondRow), typeof(Color), typeof(Card), Color.White, BindingMode.TwoWay);
 
@@ -33,8 +39,8 @@ public partial class Card
     public static readonly BindableProperty FontSizeSecondRowProperty =
         BindableProperty.Create(nameof(FontSizeSecondRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
 
-    public static readonly BindableProperty TextTransformSecomdRowProperty =
-        BindableProperty.Create(nameof(TextTransformSecomdRow), typeof(TextTransform), typeof(Card), TextTransform.Uppercase, BindingMode.TwoWay);
+    public static readonly BindableProperty TextTransformSecondRowProperty =
+        BindableProperty.Create(nameof(TextTransformSecondRow), typeof(TextTransform), typeof(Card), TextTransform.Uppercase, BindingMode.TwoWay);
 
     public static readonly BindableProperty IsIconVisibleProperty =
         BindableProperty.Create(nameof(IsIconVisible), typeof(bool), typeof(Card), true, BindingMode.TwoWay);
@@ -54,6 +60,12 @@ public partial class Card
     {
         get => (string)GetValue(TextFirstRowProperty);
         set => SetValue(TextFirstRowProperty, value);
+    }
+
+    public string ValueFirstRow
+    {
+        get => (string)GetValue(ValueFirstRowProperty);
+        set => SetValue(ValueFirstRowProperty, value);
     }
 
     public Color TextColorFirstRow
@@ -87,6 +99,12 @@ public partial class Card
         set => SetValue(TextSecondRowProperty, value);
     }
 
+    public string ValueSecondRow
+    {
+        get => (string)GetValue(ValueSecondRowProperty);
+        set => SetValue(ValueSecondRowProperty, value);
+    }
+
     public Color TextColorSecondRow
     {
         get => (Color)GetValue(TextColorSecondRowProperty);
@@ -106,10 +124,10 @@ public partial class Card
         set => SetValue(FontSizeSecondRowProperty, value);
     }
 
-    public TextTransform TextTransformSecomdRow
+    public TextTransform TextTransformSecondRow
     {
-        get => (TextTransform)GetValue(TextTransformSecomdRowProperty);
-        set => SetValue(TextTransformSecomdRowProperty, value);
+        get => (TextTransform)GetValue(TextTransformSecondRowProperty);
+        set => SetValue(TextTransformSecondRowProperty, value);
     }
 
     public bool IsIconVisible

@@ -9,7 +9,7 @@
     IsVisible="{Binding IsVisibleLabel, Source={x:Reference this}}">
     <Label
         HorizontalTextAlignment="Center"
-        VerticalTextAlignment="Center"
+        VerticalOptions="Center"
         TextTransform="{Binding TextTransform, Source={x:Reference this}}"
         FontAttributes="{Binding FontAttributes, Source={x:Reference this}}"
         Text="{Binding Text, Source={x:Reference this}}"

@@ -68,24 +68,34 @@
                 Grid.Row="1">
                 <controls:Card
                     Grid.Column="0"
-                    BackgroundColor="#D7D7D7" 
+                    BackgroundColor="#D7D7D7"
                     Source="ic_chart.png"
-                    TextFirstRow="12 gb"
-                    TextSecondRow="Left of 124"
+                    ValueFirstRow="12"
+                    TextFirstRow="Gb"
+                    TextSecondRow="Left of"
+                    ValueSecondRow="124"
                     FontSizeSecondRow="9" />
+
                 <controls:Card
+                    TextTransformFirstRow="Uppercase"
+                    TextTransformSecondRow="Uppercase" 
                     Grid.Column="1"
-                    BackgroundColor="#D7D7D7" 
+                    BackgroundColor="#D7D7D7"
                     Source="ic_chart.png"
-                    TextFirstRow="20 min"
-                    TextSecondRow="Left of 124"
+                    ValueFirstRow="20"
+                    TextFirstRow="min"
+                    TextSecondRow="Left of"
+                    ValueSecondRow="124"
                     FontSizeSecondRow="9" />
+                
                 <controls:Card
                     Grid.Column="2"
-                    BackgroundColor="#D7D7D7" 
+                    BackgroundColor="#D7D7D7"
                     Source="ic_chart.png"
-                    TextFirstRow="50 sms"
-                    TextSecondRow="Left of 124"
+                    ValueFirstRow="50"
+                    TextFirstRow="sms"
+                    TextSecondRow="Left of"
+                    ValueSecondRow="124"
                     FontSizeSecondRow="9" />
             </Grid>
 
@@ -95,10 +105,9 @@
                 BackgroundColor="#F2F2F2"/>
 
             <!--Details-->
-            <StackLayout
-                Grid.Row="3">
                 <Grid
-                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Red"
+                    Grid.Row="3"
                     RowDefinitions="Auto,*,Auto">
                     <!--Switch-->
                     <StackLayout
@@ -120,7 +129,8 @@
                     </StackLayout>
 
                     <!--Date-->
-                    <StackLayout Grid.Row="1">
+                    <StackLayout 
+                        Grid.Row="1">
                         <Frame
                             Margin="10,0"
                             Padding="20"
@@ -185,7 +195,6 @@
                     </Grid>
                 </Grid>
 
-            </StackLayout>
 
         </Grid>
 

@@ -2,35 +2,64 @@
 <Frame
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:CarouselView.Converters"
     x:Class="CarouselView.Controls.Card"
-    x:Name="This"
+    x:Name="this"
     Padding="5"
     CornerRadius="15">
+    
+    <Frame.Resources>
+        <ResourceDictionary>
+            <converters:StringCaseConverter
+                x:Key="caseConverter" />
+        </ResourceDictionary>
+    </Frame.Resources>
+    
     <Grid
         HorizontalOptions="Center"
         RowDefinitions="Auto,*">
         <Image
             Grid.Column="0"
             Grid.RowSpan="2"
-            IsVisible="{Binding IsIconVisible, Source={x:Reference This}}"
-            Source="{Binding Source, Source={x:Reference This}}"
-            Scale="{Binding IconScale, Source={x:Reference This}}"/>
+            IsVisible="{Binding IsIconVisible, Source={x:Reference this}}"
+            Source="{Binding Source, Source={x:Reference this}}"
+            Scale="{Binding IconScale, Source={x:Reference this}}"/>
         <StackLayout
             VerticalOptions="Center"
             Grid.Column="1"
             Grid.RowSpan="2">
             <Label
-                Text="{Binding TextFirstRow, Source={x:Reference This}}"
-                TextColor="{Binding TextColorFirstRow, Source={x:Reference This}}"
-                FontAttributes="{Binding FontAttributesFirstRow, Source={x:Reference This}}"
-                FontSize="{Binding FontSizeFirstRow, Source={x:Reference This}}"
-                TextTransform="{Binding TextTransformFirstRow, Source={x:Reference This}}" />
+                TextColor="{Binding TextColorFirstRow, Source={x:Reference this}}"
+                FontAttributes="{Binding FontAttributesFirstRow, Source={x:Reference this}}"
+                FontSize="{Binding FontSizeFirstRow, Source={x:Reference this}}"
+                TextTransform="{Binding TextTransformFirstRow, Source={x:Reference this}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding ValueFirstRow, Source={x:Reference this}}" />
+                        <Span
+                            Text=" " />
+                        <Span
+                            Text="{Binding TextFirstRow, Source={x:Reference this}, Converter={StaticResource caseConverter}, ConverterParameter=upper}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
             <Label
-                Text="{Binding TextSecondRow, Source={x:Reference This}}"
-                TextColor="{Binding TextColorSecondRow, Source={x:Reference This}}"
-                FontAttributes="{Binding FontAttributesSecondRow, Source={x:Reference This}}"
-                FontSize="{Binding FontSizeSecondRow, Source={x:Reference This}}"
-                TextTransform="{Binding TextTransformSecomdRow, Source={x:Reference This}}" />
+                TextColor="{Binding TextColorSecondRow, Source={x:Reference this}}"
+                FontAttributes="{Binding FontAttributesSecondRow, Source={x:Reference this}}"
+                FontSize="{Binding FontSizeSecondRow, Source={x:Reference this}}"
+                TextTransform="{Binding TextTransformSecondRow, Source={x:Reference this}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding TextSecondRow, Source={x:Reference this}, Converter={StaticResource caseConverter}, ConverterParameter=upper}" />
+                        <Span
+                            Text=" " />
+                        <Span
+                            Text="{Binding ValueSecondRow, Source={x:Reference this}}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
         </StackLayout>
     </Grid>
 </Frame>
