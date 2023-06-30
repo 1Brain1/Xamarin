@@ -104,6 +104,36 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_bell.png">
+      <Link>ic_bell.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_calendar.png">
+      <Link>ic_calendar.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_card.png">
+      <Link>ic_card.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_change.png">
+      <Link>ic_change.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_chart.png">
+      <Link>ic_chart.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_eye.png">
+      <Link>ic_eye.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_mdn.png">
+      <Link>ic_mdn.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_monkey.png">
+      <Link>ic_monkey.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_renew.png">
+      <Link>ic_renew.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_warning.png">
+      <Link>ic_warning.png</Link>
+    </Content>
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
