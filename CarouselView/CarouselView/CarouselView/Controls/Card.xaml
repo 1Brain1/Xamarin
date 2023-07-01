@@ -16,18 +16,15 @@
     </Frame.Resources>
     
     <Grid
-        RowDefinitions="*,2*">
+        HorizontalOptions="FillAndExpand">
         <Image
             Grid.Column="0"
-            Grid.RowSpan="2"
             IsVisible="{Binding IsIconVisible, Source={x:Reference this}}"
             Source="{Binding Source, Source={x:Reference this}}"
             Scale="{Binding IconScale, Source={x:Reference this}}"/>
         <StackLayout
-            Spacing="20"
             VerticalOptions="Center"
-            Grid.Column="1"
-            Grid.RowSpan="2">
+            Grid.Column="1">
             <Label
                 TextColor="{Binding TextColorFirstRow, Source={x:Reference this}}"
                 FontAttributes="{Binding FontAttributesFirstRow, Source={x:Reference this}}"
