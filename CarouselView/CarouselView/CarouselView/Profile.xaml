@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:CarouselView.Controls"
+             x:Class="CarouselView.Profile">
+    <Grid
+        RowDefinitions="Auto,2*,4*">
+        <!--Hello-->
+        <StackLayout
+            Grid.Row="0"
+            Padding="30, 0, 10, 0"
+            Orientation="Horizontal"
+            HeightRequest="60">
+            <Label                
+                Text="Mister Twister"
+                VerticalOptions="EndAndExpand"
+                TextColor="#514D4D"
+                FontAttributes="Bold"
+                FontSize="Title" />
+            <Image 
+                HorizontalOptions="EndAndExpand"
+                Source="ic_bell"/>
+        </StackLayout>
+
+        <!--Profile Info-->
+        <StackLayout
+            Grid.Row="1"
+            Margin="20,0">
+            <Frame 
+                CornerRadius="10"
+                BackgroundColor="#F2F2F2"
+                VerticalOptions="FillAndExpand">
+
+            </Frame>
+        </StackLayout>
+
+        <!--Switches-->
+        <Grid
+            Grid.Row="2"
+            RowDefinitions="*,Auto"
+            ColumnDefinitions="Auto,*,Auto,Auto"
+            Margin="20,5">
+            <!--Notifications Swtich-->
+            <Switch
+                Grid.Column="0"
+                IsToggled="true"
+                VerticalOptions="Start" />
+            <Label
+                Grid.Column="1"
+                Text="Notifications"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"
+                TextColor="#514D4D" />
+
+            <!--Theme-->
+            <Switch
+                Grid.Column="2"
+                IsToggled="false"
+                VerticalOptions="Start" />
+            <Label
+                Grid.Column="3"
+                Text="Dark mode"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"
+                TextColor="#514D4D" />
+
+            <StackLayout
+                HeightRequest="40"
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                Margin="20,0">
+                <controls:Button
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="#60E17C"
+                    Text="Logout" 
+                    TextTransform="Uppercase"
+                    Source="ic_logout"/>
+            </StackLayout>
+
+        </Grid>
+        
+        
+
+    </Grid>
+</ContentPage>

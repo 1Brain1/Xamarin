@@ -20,4 +20,8 @@
     <local:MonkeyPage
         Title="MonkeyPage"
         IconImageSource="ic_monkey.png"/>
+    
+    <local:Profile
+        Title="Profile"
+        IconImageSource="ic_monkey.png"/>
 </TabbedPage>
