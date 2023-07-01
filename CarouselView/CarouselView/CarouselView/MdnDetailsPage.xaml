@@ -114,6 +114,7 @@
                         Grid.Row="0"
                         Orientation="Horizontal">
                         <Label
+                            VerticalTextAlignment="Center"
                             Text="Details"
                             TextTransform="Uppercase"
                             FontSize="Subtitle"
@@ -121,6 +122,8 @@
                             TextColor="#514D4D"/>
                         <!--Usage-->
                         <controls:Button
+                            FontSize="Default"
+                            Scale="0.6"
                             HorizontalOptions="EndAndExpand"
                             BackgroundColor="#60E17C"
                             Source="ic_usage"
