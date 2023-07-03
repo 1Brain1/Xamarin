@@ -24,4 +24,8 @@
     <local:Profile
         Title="Profile"
         IconImageSource="ic_monkey.png"/>
+    
+    <local:ProfilePopup
+        Title="Popup"
+        IconImageSource="ic_monkey.png"/>
 </TabbedPage>
