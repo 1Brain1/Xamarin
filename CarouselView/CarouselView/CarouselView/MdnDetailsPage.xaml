@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns:controls="clr-namespace:CarouselView.Controls"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.MdnDetailsPage">
+
+    <Grid
+        RowDefinitions="Auto, *, 3*">
+
+        <!--Hello-->
+        <StackLayout
+            Grid.Row="0"
+            Padding="30, 0, 10, 0"
+            Orientation="Horizontal"
+            HeightRequest="60">
+            <Label                
+                Text="Hello, Mister!"
+                VerticalOptions="EndAndExpand"
+                TextColor="#514D4D"
+                FontAttributes="Bold"
+                FontSize="Title" />
+            <Image 
+                HorizontalOptions="EndAndExpand"
+                Source="ic_bell"/>
+        </StackLayout>
+
+        <!--Carousel-->
+        <StackLayout
+            Grid.Row="1">
+            <CarouselView
+                x:Name="carouselView"
+                Loop="False">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:Carousel />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </StackLayout>
+
+        <!--Subscription & Plan-->
+        <Grid
+            Margin="10"
+            Grid.Row="2"
+            RowSpacing="10"
+            RowDefinitions="Auto,*,Auto,4*">
+
+            <!--Subscription-->
+            <StackLayout
+                Orientation="Horizontal">
+                <Label
+                    Text="Subscription"
+                    TextTransform="Uppercase"
+                    VerticalTextAlignment="Center"
+                    FontSize="Subtitle"
+                    FontAttributes="Bold" 
+                    TextColor="#514D4D"/>
+
+                <!--History-->
+                <controls:Button
+                    HorizontalOptions="EndAndExpand"
+                    BackgroundColor="#60E17C"
+                    Source="ic_card"
+                    Text="HISTORY" />
+            </StackLayout>  
+
+            <!--Cards-->
+            <Grid
+                Grid.Row="1">
+                <controls:Card
+                    Grid.Column="0"
+                    BackgroundColor="#D7D7D7"
+                    Source="ic_chart.png"
+                    ValueFirstRow="12"
+                    TextFirstRow="Gb"
+                    TextSecondRow="Left of"
+                    ValueSecondRow="124"
+                    FontSizeSecondRow="9" />
+
+                <controls:Card
+                    Grid.Column="1"
+                    BackgroundColor="#D7D7D7"
+                    Source="ic_chart.png"
+                    ValueFirstRow="20"
+                    TextFirstRow="min"
+                    TextSecondRow="Left of"
+                    ValueSecondRow="124"
+                    FontSizeSecondRow="9" />
+
+                <controls:Card
+                    Grid.Column="2"
+                    BackgroundColor="#D7D7D7"
+                    Source="ic_chart.png"
+                    ValueFirstRow="50"
+                    TextFirstRow="sms"
+                    TextSecondRow="Left of"
+                    ValueSecondRow="124"
+                    FontSizeSecondRow="9" />
+            </Grid>
+
+            <BoxView
+                Grid.Row="2"
+                HeightRequest="2"
+                BackgroundColor="#F2F2F2"/>
+
+            <!--Details-->
+            <StackLayout
+                Grid.Row="3">
+                <Grid
+                    VerticalOptions="FillAndExpand"
+                    RowDefinitions="Auto,Auto,Auto">
+                    <StackLayout
+                        Grid.Row="0"
+                        Orientation="Horizontal">
+                        <Label
+                            VerticalTextAlignment="Center"
+                            Text="Details"
+                            TextTransform="Uppercase"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold" 
+                            TextColor="#514D4D"/>
+                        <!--Usage-->
+                        <controls:Button
+                            FontSize="Default"
+                            Scale="0.6"
+                            HorizontalOptions="EndAndExpand"
+                            BackgroundColor="#60E17C"
+                            Source="ic_usage"
+                            Text="USAGE" />
+                    </StackLayout>
+
+                    <!--Date-->
+                    <Frame
+                        Grid.Row="1"
+                        Margin="10,0"
+                        Padding="20"
+                        CornerRadius="10"
+                        BackgroundColor="#F2F2F2">
+                        <StackLayout>
+                            <Label
+                                Text="PURPLE UNL Talk, Text &amp; Data w/30GB High Speed"
+                                FontSize="Micro"
+                                TextColor="#8E8A8A"/>
+                            <Grid
+                                ColumnDefinitions="Auto,*,3*">
+                                <Image
+                                    Grid.Column="0"
+                                    Scale="0.5"
+                                    Source="ic_calendar"/>
+                                <Label
+                                    Grid.Column="1"
+                                    Text="End date:"
+                                    VerticalTextAlignment="Center"
+                                    TextTransform="Uppercase"
+                                    TextColor="#8E8A8A" />
+                                <DatePicker
+                                    Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    FontSize="Small"
+                                    IsEnabled="False"
+                                    Date="06/05/2023"
+                                    TextColor="#8E8A8A"/>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                    <Grid
+                    Grid.Row="3"
+                    Padding="10,0"
+                    ColumnDefinitions="Auto,*,Auto,Auto">
+                        <!--Notifications Swtich-->
+                        <Switch
+                        Grid.Column="0"
+                        IsToggled="true"
+                        VerticalOptions="Start" />
+                        <Label
+                        Grid.Column="1"
+                        Text="Mdn Notifications"
+                        TextTransform="Uppercase"
+                        FontAttributes="Bold"
+                        TextColor="#514D4D" />
+
+                        <!--AutoPay Swtich-->
+                        <Switch
+                        Grid.Column="2"
+                        IsToggled="True"
+                        VerticalOptions="Start" />
+                        <Label
+                        Grid.Column="3"
+                        Text="AutoPay"
+                        TextTransform="Uppercase"
+                        FontAttributes="Bold"
+                        TextColor="#514D4D" />
+                    </Grid>
+                </Grid>
+                <!--Renew & Change Plan Buttons-->
+                <StackLayout                  
+                        Orientation="Horizontal"
+                        VerticalOptions="End">
+                    <controls:Button
+                            Padding="7"
+                            HorizontalOptions="EndAndExpand"
+                            BackgroundColor="#60E17C"
+                            Text="Renew Plan" 
+                            Source="ic_renew"/>
+
+                    <controls:Button 
+                            HorizontalOptions="StartAndExpand"
+                            BackgroundColor="#60E17C"
+                            Text="Change Plan" 
+                            Source="ic_change">
+                        <controls:Button.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Test}" />
+                        </controls:Button.GestureRecognizers>
+                    </controls:Button>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

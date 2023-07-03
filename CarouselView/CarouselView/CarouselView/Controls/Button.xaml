@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.Controls.Button"
+    x:Name="This"
+    Padding="10,5"
+    CornerRadius="10">
+    <StackLayout
+        HorizontalOptions="Center"
+        Orientation="Horizontal">
+        <Image
+            IsVisible="{Binding IsIconVisible, Source={x:Reference This}}"
+            Source="{Binding Source, Source={x:Reference This}}"
+            Scale="{Binding IconScale, Source={x:Reference This}}"/>
+        <Label
+            Padding="3,0"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            Text="{Binding Text, Source={x:Reference This}}"
+            TextColor="{Binding TextColor, Source={x:Reference This}}"
+            FontAttributes="{Binding FontAttributes, Source={x:Reference This}}"
+            FontSize="{Binding FontSize, Source={x:Reference This}}"
+            TextTransform="{Binding TextTransform, Source={x:Reference This}}" />
+    </StackLayout>    
+</Frame>

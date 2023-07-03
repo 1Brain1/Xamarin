@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:CarouselView.Controls" 
+             xmlns:converters="clr-namespace:CarouselView.Converters"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="CarouselView.Profile">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:Base64ToImageConverter
+                x:Key="Base64ToImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid
+        RowDefinitions="Auto,2*,4*">
+        <!--Hello-->
+        <StackLayout
+            Grid.Row="0"
+            Padding="30, 0, 10, 0"
+            Orientation="Horizontal"
+            HeightRequest="60">
+            <Label                
+                Text="Mister Twister"
+                VerticalOptions="EndAndExpand"
+                TextColor="#514D4D"
+                FontAttributes="Bold"
+                FontSize="Title" />
+            <Image 
+                HorizontalOptions="EndAndExpand"
+                Source="ic_bell.png" />
+        </StackLayout>
+
+        <!--Profile Info-->
+        <StackLayout
+            Grid.Row="1"
+            Margin="20,0">
+            <Frame 
+                Padding="0"
+                CornerRadius="10"
+                BackgroundColor="#F2F2F2"
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    Margin="10"
+                    RowDefinitions="*,Auto"
+                    ColumnDefinitions="*,2*">
+                        <Grid
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start">
+                            <Frame
+                                HeightRequest="110"
+                                WidthRequest="110"
+                                CornerRadius="55"
+                                HorizontalOptions="Center"
+                                BackgroundColor="White"
+                                Padding="0">
+                                <Label
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    TextColor="Black"
+                                    FontFamily="Icons"
+                                    FontSize="70"
+                                    Text="O" />
+                            </Frame>
+                            <forms:CachedImage
+                                HeightRequest="110"
+                                WidthRequest="110"
+                                Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
+                                <forms:CachedImage.Transformations>
+                                    <transformations:CircleTransformation />
+                                </forms:CachedImage.Transformations>
+                            </forms:CachedImage>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding OpenPickAvatarPopup}" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    <!--ProfileData-->
+                    <StackLayout
+                        Grid.Column="1"
+                        VerticalOptions="Center">
+                        <Grid
+                            Grid.Column="1"
+                            RowDefinitions="Auto,Auto,Auto,Auto"
+                            ColumnDefinitions="Auto,*">
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Source="ic_mail.png"/>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="sarah_customer@gmail.com"/>
+
+                            <Image
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Source="ic_phone.png"/>
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="(643) 454-3546"/>
+
+                            <Image
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Source="ic_address.png"/>
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Text="252 Congress Ave"/>
+                            <Label
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Text="Lansdowne, PA, 19050"/>
+                        </Grid>
+                    </StackLayout>
+                    <controls:Button
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="End"
+                        BackgroundColor="#60E17C"
+                        Source="ic_edit.png"
+                        Scale="0.8"
+                        Text="Edit"
+                        FontSize="Default"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <!--Switches-->
+        <Grid
+            Grid.Row="2"
+            RowDefinitions="*,Auto"
+            ColumnDefinitions="Auto,*,Auto,Auto"
+            Margin="20,5">
+            <!--Notifications Swtich-->
+            <Switch
+                Grid.Column="0"
+                IsToggled="true"
+                VerticalOptions="Start" />
+            <Label
+                Grid.Column="1"
+                Text="Notifications"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"
+                TextColor="#514D4D" />
+
+            <!--Theme-->
+            <Switch
+                Grid.Column="2"
+                IsToggled="false"
+                VerticalOptions="Start" />
+            <Label
+                Grid.Column="3"
+                Text="Dark mode"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"
+                TextColor="#514D4D" />
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                Margin="20,0"
+                HeightRequest="40">
+                <controls:Button
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="#D7D7D7"
+                    Text="Logout" 
+                    TextTransform="Uppercase"
+                    Source="ic_logout.png">
+                    <controls:Button.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LogOutCommand}" />
+                    </controls:Button.GestureRecognizers>
+                </controls:Button>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

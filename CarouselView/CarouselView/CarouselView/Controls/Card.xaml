@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:CarouselView.Converters"
+    x:Class="CarouselView.Controls.Card"
+    x:Name="this"
+    Padding="5"
+    CornerRadius="15">
+    
+    <Frame.Resources>
+        <ResourceDictionary>
+            <converters:StringCaseConverter
+                x:Key="caseConverter" />
+        </ResourceDictionary>
+    </Frame.Resources>
+    
+    <Grid
+        HorizontalOptions="FillAndExpand">
+        <Image
+            Grid.Column="0"
+            IsVisible="{Binding IsIconVisible, Source={x:Reference this}}"
+            Source="{Binding Source, Source={x:Reference this}}"
+            Scale="{Binding IconScale, Source={x:Reference this}}"/>
+        <StackLayout
+            VerticalOptions="Center"
+            Grid.Column="1">
+            <Label
+                TextColor="{Binding TextColorFirstRow, Source={x:Reference this}}"
+                FontAttributes="{Binding FontAttributesFirstRow, Source={x:Reference this}}"
+                FontSize="{Binding FontSizeFirstRow, Source={x:Reference this}}"
+                TextTransform="{Binding TextTransformFirstRow, Source={x:Reference this}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding ValueFirstRow, Source={x:Reference this}}" />
+                        <Span
+                            Text=" " />
+                        <Span
+                            Text="{Binding TextFirstRow, Source={x:Reference this}, Converter={StaticResource caseConverter}, ConverterParameter=upper}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                TextColor="{Binding TextColorSecondRow, Source={x:Reference this}}"
+                FontAttributes="{Binding FontAttributesSecondRow, Source={x:Reference this}}"
+                FontSize="{Binding FontSizeSecondRow, Source={x:Reference this}}"
+                TextTransform="{Binding TextTransformSecondRow, Source={x:Reference this}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding TextSecondRow, Source={x:Reference this}, Converter={StaticResource caseConverter}, ConverterParameter=upper}" />
+                        <Span
+                            Text=" " />
+                        <Span
+                            Text="{Binding ValueSecondRow, Source={x:Reference this}}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</Frame>
