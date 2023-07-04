@@ -104,6 +104,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_address.png">
+      <Link>ic_address.png</Link>
+    </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_bell.png">
       <Link>ic_bell.png</Link>
     </Content>
@@ -119,8 +122,20 @@
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_chart.png">
       <Link>ic_chart.png</Link>
     </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_done.png">
+      <Link>ic_done.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_edit.png">
+      <Link>ic_edit.png</Link>
+    </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_eye.png">
       <Link>ic_eye.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_logout.png">
+      <Link>ic_logout.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_mail.png">
+      <Link>ic_mail.png</Link>
     </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_mdn.png">
       <Link>ic_mdn.png</Link>
@@ -128,11 +143,17 @@
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_monkey.png">
       <Link>ic_monkey.png</Link>
     </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_phone.png">
+      <Link>ic_phone.png</Link>
+    </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_renew.png">
       <Link>ic_renew.png</Link>
     </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_support.png">
       <Link>ic_support.png</Link>
+    </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_usage.png">
+      <Link>ic_usage.png</Link>
     </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_warning.png">
       <Link>ic_warning.png</Link>
