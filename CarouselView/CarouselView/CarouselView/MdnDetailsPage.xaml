@@ -61,7 +61,7 @@
                 <controls:Button
                     HorizontalOptions="EndAndExpand"
                     BackgroundColor="#60E17C"
-                    Source="ic_card"
+                    Source="ic_card.png"
                     Text="HISTORY" />
             </StackLayout>  
 
@@ -126,7 +126,7 @@
                             Scale="0.6"
                             HorizontalOptions="EndAndExpand"
                             BackgroundColor="#60E17C"
-                            Source="ic_usage"
+                            Source="ic_usage.png"
                             Text="USAGE" />
                     </StackLayout>
 
@@ -203,13 +203,13 @@
                             HorizontalOptions="EndAndExpand"
                             BackgroundColor="#60E17C"
                             Text="Renew Plan" 
-                            Source="ic_renew"/>
+                            Source="ic_renew.png"/>
 
                     <controls:Button 
                             HorizontalOptions="StartAndExpand"
                             BackgroundColor="#60E17C"
                             Text="Change Plan" 
-                            Source="ic_change">
+                            Source="ic_change.png">
                         <controls:Button.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Test}" />
                         </controls:Button.GestureRecognizers>
