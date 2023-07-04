@@ -131,6 +131,9 @@
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_renew.png">
       <Link>ic_renew.png</Link>
     </Content>
+    <Content Include="..\CarouselView.Android\Resources\drawable\ic_support.png">
+      <Link>ic_support.png</Link>
+    </Content>
     <Content Include="..\CarouselView.Android\Resources\drawable\ic_warning.png">
       <Link>ic_warning.png</Link>
     </Content>
