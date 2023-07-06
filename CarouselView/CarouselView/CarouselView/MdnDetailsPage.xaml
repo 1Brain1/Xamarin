@@ -44,11 +44,10 @@
             Margin="10"
             Grid.Row="2"
             RowSpacing="10"
-            RowDefinitions="Auto,*,Auto,4*">
+            RowDefinitions="Auto,Auto,Auto,*">
 
             <!--Subscription-->
-            <StackLayout
-                Orientation="Horizontal">
+            <Grid>
                 <Label
                     Text="Subscription"
                     TextTransform="Uppercase"
@@ -59,11 +58,11 @@
 
                 <!--History-->
                 <controls:Button
-                    HorizontalOptions="EndAndExpand"
+                    Grid.Column="2"
+                    Text="HISTORY"
                     BackgroundColor="#60E17C"
-                    Source="ic_card"
-                    Text="HISTORY" />
-            </StackLayout>  
+                    Source="ic_card" />
+            </Grid>  
 
             <!--Cards-->
             <Grid
@@ -76,7 +75,7 @@
                     TextFirstRow="Gb"
                     TextSecondRow="Left of"
                     ValueSecondRow="124"
-                    FontSizeSecondRow="9" />
+                    FontSizeSecondRow="Micro" />
 
                 <controls:Card
                     Grid.Column="1"
@@ -86,7 +85,7 @@
                     TextFirstRow="min"
                     TextSecondRow="Left of"
                     ValueSecondRow="124"
-                    FontSizeSecondRow="9" />
+                    FontSizeSecondRow="Micro" />
 
                 <controls:Card
                     Grid.Column="2"
@@ -96,7 +95,7 @@
                     TextFirstRow="sms"
                     TextSecondRow="Left of"
                     ValueSecondRow="124"
-                    FontSizeSecondRow="9" />
+                    FontSizeSecondRow="Micro" />
             </Grid>
 
             <BoxView
@@ -110,9 +109,8 @@
                 <Grid
                     VerticalOptions="FillAndExpand"
                     RowDefinitions="Auto,Auto,Auto">
-                    <StackLayout
-                        Grid.Row="0"
-                        Orientation="Horizontal">
+                    <Grid
+                        Grid.Row="0">
                         <Label
                             VerticalTextAlignment="Center"
                             Text="Details"
@@ -122,13 +120,11 @@
                             TextColor="#514D4D"/>
                         <!--Usage-->
                         <controls:Button
-                            FontSize="Default"
-                            Scale="0.6"
-                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="2"
+                            Text="USAGE"
                             BackgroundColor="#60E17C"
-                            Source="ic_usage"
-                            Text="USAGE" />
-                    </StackLayout>
+                            Source="ic_usage" />
+                    </Grid>
 
                     <!--Date-->
                     <Frame
