@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:CarouselView.Controls" 
-             xmlns:converters="clr-namespace:CarouselView.Converters"
-             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             x:Class="CarouselView.Profile">
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CarouselView.Controls"
+    xmlns:converters="clr-namespace:CarouselView.Converters"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Class="CarouselView.Profile">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -14,74 +16,92 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-
     <Grid
-        RowDefinitions="Auto,2*,4*">
+        RowDefinitions="Auto,*,2*">
         <!--Hello-->
-        <StackLayout
-            Grid.Row="0"
-            Padding="30, 0, 10, 0"
-            Orientation="Horizontal"
-            HeightRequest="60">
-            <Label                
-                Text="Mister Twister"
-                VerticalOptions="EndAndExpand"
-                TextColor="#514D4D"
-                FontAttributes="Bold"
-                FontSize="Title" />
-            <Image 
-                HorizontalOptions="EndAndExpand"
-                Source="ic_bell.png" />
-        </StackLayout>
+        <Grid
+            RowDefinitions="Auto,Auto">
+            <StackLayout
+                Orientation="Horizontal">
+                <Label
+                    Padding="10,0"
+                    WidthRequest="50"
+                    BackgroundColor="Red"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Start"
+                    FontFamily="Icons"
+                    FontSize="20"
+                    Text="&lt;" />
+
+                <Image
+                    BackgroundColor="Red"
+                    Margin="10,0"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Start"
+                    Source="ic_bell.png" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Margin="30,0">
+                <Label
+                    Text="Mister Twister"
+                    TextColor="#514D4D"
+                    FontAttributes="Bold"
+                    FontSize="Title" />
+            </StackLayout>
+        </Grid>
 
         <!--Profile Info-->
         <StackLayout
             Grid.Row="1"
             Margin="20,0">
-            <Frame 
+            <Frame
                 Padding="0"
                 CornerRadius="10"
                 BackgroundColor="#F2F2F2"
                 VerticalOptions="FillAndExpand">
                 <Grid
+                    BackgroundColor="Red"
                     Margin="10"
                     RowDefinitions="*,Auto"
                     ColumnDefinitions="*,2*">
-                        <Grid
-                            VerticalOptions="Center"
-                            HorizontalOptions="Start">
-                            <Frame
-                                HeightRequest="110"
-                                WidthRequest="110"
-                                CornerRadius="55"
+                    <Grid
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start">
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="White"
+                            HeightRequest="110"
+                            WidthRequest="110"
+                            HorizontalOptions="Center"
+                            CornerRadius="55">
+                            <Label
+                                VerticalOptions="Center"
                                 HorizontalOptions="Center"
-                                BackgroundColor="White"
-                                Padding="0">
-                                <Label
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="Center"
-                                    TextColor="Black"
-                                    FontFamily="Icons"
-                                    FontSize="70"
-                                    Text="O" />
-                            </Frame>
-                            <forms:CachedImage
-                                HeightRequest="110"
-                                WidthRequest="110"
-                                Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
-                                <forms:CachedImage.Transformations>
-                                    <transformations:CircleTransformation />
-                                </forms:CachedImage.Transformations>
-                            </forms:CachedImage>
+                                TextColor="Black"
+                                FontFamily="Icons"
+                                FontSize="70"
+                                Text="O" />
+                        </Frame>
+                        <forms:CachedImage
+                            HeightRequest="110"
+                            WidthRequest="110"
+                            Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
+                            <forms:CachedImage.Transformations>
+                                <transformations:CircleTransformation />
+                            </forms:CachedImage.Transformations>
+                        </forms:CachedImage>
 
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Command="{Binding OpenPickAvatarPopup}" />
-                            </Grid.GestureRecognizers>
-                        </Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding OpenPickAvatarPopup}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
                     <!--ProfileData-->
                     <StackLayout
                         Grid.Column="1"
+                        Padding="7,0"
                         VerticalOptions="Center">
                         <Grid
                             Grid.Column="1"
@@ -90,33 +110,48 @@
                             <Image
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                Source="ic_mail.png"/>
+                                Source="ic_mail.png" />
                             <Label
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                Text="sarah_customer@gmail.com"/>
+                                Text="sarah_customer@gmail.com" />
 
                             <Image
                                 Grid.Row="1"
                                 Grid.Column="0"
-                                Source="ic_phone.png"/>
+                                Source="ic_phone.png" />
                             <Label
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Text="(643) 454-3546"/>
+                                Text="(643) 454-3546" />
 
                             <Image
-                                Grid.Row="2"
+                                Grid.Row="3"
                                 Grid.Column="0"
-                                Source="ic_address.png"/>
-                            <Label
-                                Grid.Row="2"
-                                Grid.Column="1"
-                                Text="252 Congress Ave"/>
+                                Source="ic_address.png" />
                             <Label
                                 Grid.Row="3"
                                 Grid.Column="1"
-                                Text="Lansdowne, PA, 19050"/>
+                                Text="252 Congress Ave" />
+
+                            <Label
+                                Grid.Row="4"
+                                Grid.Column="1">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                            Text="Lansdowne"/>
+                                        <Span 
+                                            Text=", "/>
+                                        <Span
+                                            Text=",PA"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Text="19050" />
                         </Grid>
                     </StackLayout>
                     <controls:Button
@@ -128,7 +163,7 @@
                         Source="ic_edit.png"
                         Scale="0.8"
                         Text="Edit"
-                        FontSize="Default"/>
+                        FontSize="Default" />
                 </Grid>
             </Frame>
         </StackLayout>
@@ -171,11 +206,13 @@
                 <controls:Button
                     VerticalOptions="FillAndExpand"
                     BackgroundColor="#D7D7D7"
-                    Text="Logout" 
+                    Text="Logout"
                     TextTransform="Uppercase"
-                    Source="ic_logout.png">
+                    Source="ic_logout.png"
+                    xct:TouchEffect.NativeAnimation="True">
                     <controls:Button.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding LogOutCommand}" />
+                        <TapGestureRecognizer
+                            Command="{Binding LogOutCommand}" />
                     </controls:Button.GestureRecognizers>
                 </controls:Button>
             </StackLayout>
