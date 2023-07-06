@@ -3,6 +3,7 @@
     xmlns:controls="clr-namespace:CarouselView.Controls"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     x:Class="CarouselView.MdnDetailsPage">
 
     <Grid
@@ -14,15 +15,15 @@
             Padding="30, 0, 10, 0"
             Orientation="Horizontal"
             HeightRequest="60">
-            <Label                
+            <Label
                 Text="Hello, Mister!"
                 VerticalOptions="EndAndExpand"
                 TextColor="#514D4D"
                 FontAttributes="Bold"
                 FontSize="Title" />
-            <Image 
+            <Image
                 HorizontalOptions="EndAndExpand"
-                Source="ic_bell"/>
+                Source="ic_bell" />
         </StackLayout>
 
         <!--Carousel-->
@@ -53,8 +54,8 @@
                     TextTransform="Uppercase"
                     VerticalTextAlignment="Center"
                     FontSize="Subtitle"
-                    FontAttributes="Bold" 
-                    TextColor="#514D4D"/>
+                    FontAttributes="Bold"
+                    TextColor="#514D4D" />
 
                 <!--History-->
                 <controls:Button
@@ -62,7 +63,7 @@
                     Text="HISTORY"
                     BackgroundColor="#60E17C"
                     Source="ic_card" />
-            </Grid>  
+            </Grid>
 
             <!--Cards-->
             <Grid
@@ -101,7 +102,7 @@
             <BoxView
                 Grid.Row="2"
                 HeightRequest="2"
-                BackgroundColor="#F2F2F2"/>
+                BackgroundColor="#F2F2F2" />
 
             <!--Details-->
             <StackLayout
@@ -116,8 +117,8 @@
                             Text="Details"
                             TextTransform="Uppercase"
                             FontSize="Subtitle"
-                            FontAttributes="Bold" 
-                            TextColor="#514D4D"/>
+                            FontAttributes="Bold"
+                            TextColor="#514D4D" />
                         <!--Usage-->
                         <controls:Button
                             Grid.Column="2"
@@ -137,13 +138,13 @@
                             <Label
                                 Text="PURPLE UNL Talk, Text &amp; Data w/30GB High Speed"
                                 FontSize="Micro"
-                                TextColor="#8E8A8A"/>
+                                TextColor="#8E8A8A" />
                             <Grid
                                 ColumnDefinitions="Auto,*,3*">
                                 <Image
                                     Grid.Column="0"
                                     Scale="0.5"
-                                    Source="ic_calendar"/>
+                                    Source="ic_calendar" />
                                 <Label
                                     Grid.Column="1"
                                     Text="End date:"
@@ -156,61 +157,64 @@
                                     FontSize="Small"
                                     IsEnabled="False"
                                     Date="06/05/2023"
-                                    TextColor="#8E8A8A"/>
+                                    TextColor="#8E8A8A" />
                             </Grid>
                         </StackLayout>
                     </Frame>
 
                     <Grid
-                    Grid.Row="3"
-                    Padding="10,0"
-                    ColumnDefinitions="Auto,*,Auto,Auto">
+                        Grid.Row="3"
+                        Padding="10,0"
+                        ColumnDefinitions="Auto,*,Auto,Auto">
                         <!--Notifications Swtich-->
                         <Switch
-                        Grid.Column="0"
-                        IsToggled="true"
-                        VerticalOptions="Start" />
+                            Grid.Column="0"
+                            IsToggled="true"
+                            VerticalOptions="Start" />
                         <Label
-                        Grid.Column="1"
-                        Text="Mdn Notifications"
-                        TextTransform="Uppercase"
-                        FontAttributes="Bold"
-                        TextColor="#514D4D" />
+                            Grid.Column="1"
+                            Text="Mdn Notifications"
+                            TextTransform="Uppercase"
+                            FontAttributes="Bold"
+                            TextColor="#514D4D" />
 
                         <!--AutoPay Swtich-->
                         <Switch
-                        Grid.Column="2"
-                        IsToggled="True"
-                        VerticalOptions="Start" />
+                            Grid.Column="2"
+                            IsToggled="True"
+                            VerticalOptions="Start" />
                         <Label
-                        Grid.Column="3"
-                        Text="AutoPay"
-                        TextTransform="Uppercase"
-                        FontAttributes="Bold"
-                        TextColor="#514D4D" />
+                            Grid.Column="3"
+                            Text="AutoPay"
+                            TextTransform="Uppercase"
+                            FontAttributes="Bold"
+                            TextColor="#514D4D" />
                     </Grid>
                 </Grid>
                 <!--Renew & Change Plan Buttons-->
-                <StackLayout                  
-                        Orientation="Horizontal"
-                        VerticalOptions="End">
+                <StackLayout
+                    Orientation="Horizontal"
+                    VerticalOptions="End">
                     <controls:Button
-                            Padding="7"
-                            HorizontalOptions="EndAndExpand"
-                            BackgroundColor="#60E17C"
-                            Text="Renew Plan" 
-                            Source="ic_renew"/>
+                        Padding="7"
+                        HorizontalOptions="EndAndExpand"
+                        BackgroundColor="#60E17C"
+                        Text="Renew Plan"
+                        Source="ic_renew"
+                        xct:TouchEffect.NativeAnimation="True" />
 
-                    <controls:Button 
-                            HorizontalOptions="StartAndExpand"
-                            BackgroundColor="#60E17C"
-                            Text="Change Plan" 
-                            Source="ic_change">
+                    <controls:Button
+                        HorizontalOptions="StartAndExpand"
+                        BackgroundColor="#60E17C"
+                        Text="Change Plan"
+                        Source="ic_change"
+                        xct:TouchEffect.NativeAnimation="True">
                         <controls:Button.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Test}" />
+                            <TapGestureRecognizer
+                                Command="{Binding Test}" />
                         </controls:Button.GestureRecognizers>
                     </controls:Button>
-                </StackLayout>
+                </StackLayout>                
             </StackLayout>
         </Grid>
     </Grid>
