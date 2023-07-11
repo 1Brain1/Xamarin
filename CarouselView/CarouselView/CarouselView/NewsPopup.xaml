@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.NewsPopup">
+    <StackLayout
+        Margin="20  ">
+        <Frame
+            BackgroundColor="#F2F2F2"
+            CornerRadius="10">
+            <Grid>
+
+            </Grid>
+        </Frame>
+
+        <Frame
+            BackgroundColor="#eaedef"
+            CornerRadius="5"
+            HeightRequest="130"
+            Padding="10, 0, 0, 0"
+            HasShadow="False">
+            <Editor
+                Text="The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!
+                The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!
+                The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!"
+                TextColor="#8E8A8A"
+                IsReadOnly="True" />
+        </Frame>
+
+        <Label
+            Text="Reply"
+            TextColor="#8E8A8A"
+            FontAttributes="Bold"
+            TextTransform="Uppercase" />
+
+        <Frame
+            BorderColor="#F2F2F2"
+            CornerRadius="8"
+            Padding="16,0"
+            HasShadow="False">
+            <Grid
+                ColumnDefinitions="*, auto">
+                <Entry
+                    FontFamily="Regular"
+                    VerticalOptions="Center" />
+                <Label
+                    Text=">"
+                    Grid.Column="1"
+                    FontFamily="Icons"
+                    FontSize="20"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <StackLayout
+            Orientation="Horizontal">
+            <Label
+                Text="All comments"
+                TextColor="#8E8A8A"
+                FontAttributes="Bold"
+                TextTransform="Uppercase" />
+            <Label
+                Text="4" />
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>
