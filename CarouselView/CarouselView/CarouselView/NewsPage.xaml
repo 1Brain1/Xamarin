@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.NewsPage">
+    <ListView
+        x:Name="listList"
+        SeparatorVisibility="None"
+        HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Padding="30">
+                        <Frame
+                            BackgroundColor="#F2F2F2"
+                            CornerRadius="10">
+                            <Grid>
+                                <Label
+                                    VerticalOptions="Center"
+                                    FontSize="Large"
+                                    Text="{Binding Name}" />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
