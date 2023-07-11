@@ -32,4 +32,8 @@
     <local:NewsPage
         Title="News"
         IconImageSource="ic_monkey.png"/>
+
+    <local:ContactSupport
+        Title="Contact Support"
+        IconImageSource="ic_support.png"/>    
 </TabbedPage>

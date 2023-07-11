@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CarouselView.Controls"
+    x:Class="CarouselView.ContactSupport">
+    <StackLayout
+        Margin="30">
+        <Grid
+            RowDefinitions="Auto,Auto,Auto,Auto,*"
+            RowSpacing="30"
+            ColumnDefinitions="*,*,*">
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+                <Label
+                    Text="CONTACT SUPPORT"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    TextColor="Black"
+                    FontSize="Medium" />
+
+                <BoxView
+                    HeightRequest="2"
+                    BackgroundColor="#F2F2F2" />
+            </StackLayout>
+
+            <!--<Contact Name Entry>-->
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+                <Label
+                    Text="Contact Name"
+                    TextTransform="Uppercase" />
+                <Entry />
+
+            </StackLayout>
+
+            <!--<Email Entry>-->
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+                <Label
+                    Text="EMAIL"
+                    TextTransform="Uppercase" />
+                <Entry />
+            </StackLayout>
+
+            <!--<Phone Number Entry>-->
+            <StackLayout
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+                <Label
+                    Text="PHONE NUMBER"
+                    TextTransform="Uppercase" />
+                <Entry />
+            </StackLayout>
+
+            <StackLayout
+                BackgroundColor="Aqua"
+                Grid.Row="4"
+                Grid.ColumnSpan="3">
+                <Label Text="fdsafds" />
+            </StackLayout>
+            
+           
+
+            
+            
+            <!--<Description>-->
+            <StackLayout
+                BackgroundColor="Red"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+                <Label
+                    Text="Description"
+                    TextTransform="Uppercase" />
+                <Frame
+                    BorderColor="#F2F2F2"
+                    CornerRadius="10"
+                    HeightRequest="130"
+                    HasShadow="False">
+                    <Editor />
+                </Frame>
+
+            </StackLayout>
+        </Grid>
+
+        <StackLayout
+            VerticalOptions="End">
+            <controls:Button
+                BackgroundColor="#60E17C"
+                Source="ic_done.png"
+                Scale="0.8"
+                Text="SUBMIT"
+                FontSize="Default" />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

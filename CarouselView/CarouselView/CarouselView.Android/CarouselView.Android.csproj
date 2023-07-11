@@ -147,6 +147,15 @@
     <AndroidResource Include="Resources\drawable\ic_phone.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_support.png" />
+    <AndroidResource Include="..\..\..\..\..\Downloads\ic_done.png">
+      <Link>Resources\drawable\ic_done.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_done.png" />
   </ItemGroup>
   <ItemGroup>
