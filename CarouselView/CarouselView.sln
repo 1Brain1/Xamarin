@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView.UWP", "Carouse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView.Android", "CarouselView\CarouselView.Android\CarouselView.Android.csproj", "{4878285C-4E2A-4465-AA58-164C3F2CCB83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView", "CarouselView\CarouselView\CarouselView.csproj", "{066693F2-50A3-491C-83F0-8A61912C7EAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarouselView", "CarouselView\CarouselView\CarouselView.csproj", "{066693F2-50A3-491C-83F0-8A61912C7EAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

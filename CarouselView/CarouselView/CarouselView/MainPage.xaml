@@ -14,26 +14,30 @@
     UnselectedTabColor="Black">
 
     <local:MdnDetailsPage
-        Title="MdnDetails" 
+        Title="MdnDetails"
         IconImageSource="ic_mdn.png" />
-    
-    <local:MonkeyPage
-        Title="MonkeyPage"
-        IconImageSource="ic_monkey.png"/>
-    
-    <local:Profile
-        Title="Profile"
-        IconImageSource="ic_monkey.png"/>
-    
-    <local:ProfilePopup
-        Title="Popup"
-        IconImageSource="ic_monkey.png"/>
-    
-    <local:NewsPage
-        Title="News"
-        IconImageSource="ic_monkey.png"/>
 
     <local:ContactSupport
         Title="Contact Support"
-        IconImageSource="ic_support.png"/>    
+        IconImageSource="ic_support.png" />
+
+    <!--<local:MonkeyPage
+        Title="MonkeyPage"
+        IconImageSource="ic_monkey.png" />-->
+
+    <!--<local:Profile
+        Title="Profile"
+        IconImageSource="ic_monkey.png" />
+
+    <local:ProfilePopup
+        Title="Popup"
+        IconImageSource="ic_monkey.png" />
+
+    <local:NewsPage
+        Title="News"
+        IconImageSource="ic_monkey.png" />-->
+    
+    <!--<local:ListTest
+        Title="Switch"
+        IconImageSource="ic_monkey.png" />-->
 </TabbedPage>
