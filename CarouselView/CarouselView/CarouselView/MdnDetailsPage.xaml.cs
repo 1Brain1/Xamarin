@@ -1,4 +1,5 @@
 ﻿using CarouselView.Models;
+using CarouselView.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 
@@ -13,6 +14,7 @@ public partial class MdnDetailsPage : ContentPage
     public MdnDetailsPage()
     {
         InitializeComponent();
+        this.BindingContext = new MyViewModel();
 
         carouselView.ItemsSource = GetPurchases();
     }

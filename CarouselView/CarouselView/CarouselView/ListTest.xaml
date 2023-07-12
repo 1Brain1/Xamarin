@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.ListTest"
+    BackgroundColor="Red">
+    <!--<ScrollView>
+        <ListView x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame
+                            BackgroundColor="#F2F2F2">
+                            <StackLayout>
+                                
+                            </StackLayout>                            
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>-->
+
+
+    <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Frame
+            Padding="3"
+            WidthRequest="120"
+            HeightRequest="60"
+            BackgroundColor="#60E17C"
+            CornerRadius="30">
+            <Frame
+                Padding="0"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30">
+            </Frame>
+        </Frame>
+    </StackLayout>
+    
+    
+    
+
+</ContentPage>

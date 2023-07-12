@@ -28,4 +28,8 @@
     <local:ProfilePopup
         Title="Popup"
         IconImageSource="ic_monkey.png"/>
+    
+    <local:ListTest
+        Title="List"
+        IconImageSource="ic_monkey.png"/>
 </TabbedPage>

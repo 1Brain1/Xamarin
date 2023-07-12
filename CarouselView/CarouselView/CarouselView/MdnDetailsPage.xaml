@@ -3,6 +3,7 @@
     xmlns:controls="clr-namespace:CarouselView.Controls"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behavior="clr-namespace:CarouselView.Behaviors"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     x:Class="CarouselView.MdnDetailsPage">
 
@@ -165,12 +166,18 @@
                     <Grid
                         Grid.Row="3"
                         Padding="10,0"
+                        RowDefinitions="*,Auto"
                         ColumnDefinitions="Auto,*,Auto,Auto">
                         <!--Notifications Swtich-->
                         <Switch
                             Grid.Column="0"
                             IsToggled="true"
-                            VerticalOptions="Start" />
+                            VerticalOptions="Start">
+                            <Switch.Behaviors>
+                                <behavior:SwitchBehavior
+                                    Command="{Binding MyCommand}" />
+                            </Switch.Behaviors>
+                        </Switch>
                         <Label
                             Grid.Column="1"
                             Text="Mdn Notifications"
@@ -189,6 +196,37 @@
                             TextTransform="Uppercase"
                             FontAttributes="Bold"
                             TextColor="#514D4D" />
+
+
+                        <BoxView 
+                            BackgroundColor="Green"
+                            Grid.ColumnSpan="4"
+                            Grid.Row="1"/>
+
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            BackgroundColor="Aqua"
+                            x:Name="Conteiner">
+
+                            <!--<BoxView
+                                CornerRadius="{Binding Source={x:Reference Conteiner}, Path=Width}"
+                                BackgroundColor="Red"
+                                WidthRequest="{Binding Source={x:Reference Conteiner}, Path=Width}"
+                                HeightRequest="{Binding Source={x:Reference Conteiner}, Path=Height}" />-->
+                            
+                            <BoxView
+                                CornerRadius="{Binding Source={x:Reference Conteiner}, Path=Width}"
+                                BackgroundColor="Red"
+                                WidthRequest="{Binding Source={x:Reference Conteiner}, Path=Width}"
+                                HeightRequest="{Binding HeightRequest, Source={RelativeSource AncestorType={x:Type ContentView}}}" />
+                        </StackLayout>
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="{Binding SwitchValue}"
+                            HorizontalOptions="Center" />
                     </Grid>
                 </Grid>
                 <!--Renew & Change Plan Buttons-->
