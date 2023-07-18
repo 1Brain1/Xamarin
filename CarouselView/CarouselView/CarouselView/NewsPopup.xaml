@@ -2,67 +2,203 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:CarouselView.Converters"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:controls="clr-namespace:CarouselView.Controls"
     x:Class="CarouselView.NewsPopup">
-    <StackLayout
-        Margin="20">
-        <Frame
-            BackgroundColor="#F2F2F2"
-            CornerRadius="10">
-            <Grid>
 
-            </Grid>
-        </Frame>
 
-        <Frame
-            BackgroundColor="#eaedef"
-            CornerRadius="5"
-            HeightRequest="130"
-            Padding="10, 0, 0, 0"
-            HasShadow="False">
-            <Editor
-                Text="The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!
-                The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!
-                The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!"
-                TextColor="#8E8A8A"
-                IsReadOnly="True" />
-        </Frame>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:Base64ToImageConverter
+                x:Key="Base64ToImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-        <Label
-            Text="Reply"
-            TextColor="#8E8A8A"
-            FontAttributes="Bold"
-            TextTransform="Uppercase" />
+    <Frame
+        BackgroundColor="AntiqueWhite"
+        Margin="15"
+        VerticalOptions="Center"
+        HasShadow="False"
+        CornerRadius="15"
+        Padding="10,0">
 
-        <Frame
-            BorderColor="#F2F2F2"
-            CornerRadius="8"
-            Padding="16,0"
-            HasShadow="False">
-            <Grid
-                ColumnDefinitions="*, auto">
-                <Entry
-                    FontFamily="Regular"
-                    VerticalOptions="Center" />
+        <Grid
+            RowSpacing="20"
+            RowDefinitions="Auto,*,0.8*,2*"
+            Margin="15">
+
+            <controls:PopupHeader
+                Grid.Row="0"
+                Margin="-15,0"
+                Title="DETAILS" />
+
+            <!--Small NewsCard-->
+            <Frame
+                Grid.Row="1"
+                Padding="12"
+                BackgroundColor="#F2F2F2"
+                HasShadow="False"
+                CornerRadius="10">
+                <Grid
+                    ColumnDefinitions="*,*">
+                    <Image
+                        Grid.RowSpan="3"
+                        Grid.Column="0"
+                        Aspect="AspectFill"
+                        Source="https://i.ibb.co/gJgRDfd/Alien.jpg" />
+
+                    <StackLayout
+                        Grid.RowSpan="3"
+                        Grid.Column="1">
+
+                        <Label
+                            Text="PURPLE UNL Talk, Text &amp; Data w/30GB High Speed"
+                            FontAttributes="Bold"
+                            FontSize="Small" />
+
+                        <controls:Label
+                            Text="ENTERTAINMENT"
+                            BackgroundColor="#60E17C"
+                            FontSize="Micro" />
+
+                        <Label
+                            Text="LAST READ 5 MIN AGO"
+                            VerticalOptions="EndAndExpand"
+                            FontSize="Micro" />
+                    </StackLayout>
+
+                    <Image
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        Source="ic_newPost.png" />
+                </Grid>
+            </Frame>
+
+            <ScrollView
+                Grid.Row="2">
                 <Label
-                    Text=">"
-                    Grid.Column="1"
-                    FontFamily="Icons"
-                    FontSize="20"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Frame>
+                    TextColor="#8E8A8A"
+                    Text="The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom!" />
+            </ScrollView>
 
-        <StackLayout
-            Orientation="Horizontal">
-            <Label
-                Text="All comments"
-                TextColor="#8E8A8A"
-                FontAttributes="Bold"
-                TextTransform="Uppercase" />
-            <Label
-                Text="4" />
-        </StackLayout>
+            <StackLayout
+                Grid.Row="3"
+                Spacing="10">
 
+                <Label
+                    Text="Reply"
+                    TextColor="#8E8A8A"
+                    FontAttributes="Bold"
+                    TextTransform="Uppercase" />
 
-    </StackLayout>
+                <!--Comment area-->
+                <Frame
+                    HeightRequest="48"
+                    BorderColor="#F2F2F2"
+                    CornerRadius="8"
+                    Padding="16,0"
+                    HasShadow="False">
+                    <Grid
+                        ColumnDefinitions="*, auto">
+                        <Entry
+                            FontFamily="Regular"
+                            VerticalOptions="Center" />
+                        <Label
+                            Text=">"
+                            Grid.Column="1"
+                            FontFamily="Icons"
+                            FontSize="20"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Frame>
+
+                <Label
+                    TextColor="#8E8A8A"
+                    FontAttributes="Bold"
+                    TextTransform="Uppercase">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                Text="All comments" />
+                            <Span
+                                Text="  " />
+                            <Span
+                                Text="4" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ScrollView>
+                    <StackLayout
+                        x:Name="comments"
+                        BindableLayout.ItemsSource="{Binding Comments}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    BackgroundColor="#F2F2F2">
+
+                                    <!--Avatar & Comments-->
+                                    <Grid
+                                        ColumnDefinitions="Auto,*">
+                                        <!--Avatar-->
+                                        <Grid
+                                            VerticalOptions="StartAndExpand"
+                                            HorizontalOptions="StartAndExpand">
+                                            <Frame
+                                                HasShadow="False"
+                                                HeightRequest="60"
+                                                WidthRequest="60"
+                                                CornerRadius="30"
+                                                HorizontalOptions="Center"
+                                                BackgroundColor="#D4D3D3"
+                                                Padding="0">
+                                                <Label
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    TextColor="Black"
+                                                    FontSize="35"
+                                                    Text="O" />
+                                            </Frame>
+                                            <forms:CachedImage
+                                                HeightRequest="60"
+                                                WidthRequest="60"
+                                                Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
+                                                <forms:CachedImage.Transformations>
+                                                    <transformations:CircleTransformation />
+                                                </forms:CachedImage.Transformations>
+                                            </forms:CachedImage>
+                                        </Grid>
+
+                                        <!--Comments-->
+                                        <StackLayout
+                                            Spacing="0"
+                                            Grid.Column="1">
+                                            <Label
+                                                Text="06/06/2022"
+                                                FontSize="Micro" />
+                                            <Label
+                                                Text="White Fox"
+                                                FontAttributes="Bold"
+                                                TextTransform="Uppercase" />
+                                            <Label
+                                                Text="The Regulatory Recovery Fee is a service charge imposed on boom! MOBILE services to recover boom! MOBILE services to recover boom! MOBILE services to recover boom!"
+                                                FontSize="Micro" />
+                                        </StackLayout>
+                                    </Grid>
+
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+        </Grid>
+
+    </Frame>
 </ContentPage>

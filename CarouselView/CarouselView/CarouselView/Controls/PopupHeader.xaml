@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout
+    x:Class="CarouselView.Controls.PopupHeader"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="{x:DynamicResource main_background_color}"
+    x:Name="this">
+
+    <StackLayout
+        Margin="15,0"
+        Orientation="Horizontal">
+        <Label
+            Text="{Binding Title, Source={x:Reference this}}"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="End"
+            TextColor="{x:DynamicResource Key=popup_title_color}"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextTransform="Uppercase" />
+
+        <Label
+            WidthRequest="50"
+            FontFamily="Icons"
+            FontSize="20"
+            Text="X"
+            HorizontalTextAlignment="End"
+            xct:TouchEffect.NativeAnimation="True">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="1"
+                    Command="{Binding Back}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+
+    <BoxView
+        BackgroundColor="#F2F2F2"
+        HeightRequest="2" />
+</StackLayout>
+    
