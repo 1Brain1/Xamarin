@@ -6,7 +6,7 @@
     xmlns:controls="clr-namespace:CarouselView.Controls"
     x:Name="This"
     x:Class="CarouselView.Controls.Carousel"
-    HasShadow="True"
+    HasShadow="False"
     BorderColor="DarkGray"
     BackgroundColor="{Binding ProviderColor}">
 

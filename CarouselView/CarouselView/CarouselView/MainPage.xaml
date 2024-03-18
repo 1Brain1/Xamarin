@@ -18,15 +18,15 @@
         Title="MdnDetails"
         IconImageSource="ic_mdn.png" />
 
-    <local:ContactSupport
+    <!--<local:ContactSupport
         Title="Contact Support"
-        IconImageSource="ic_support.png" />
+        IconImageSource="ic_support.png" />-->
 
     <!--<local:MonkeyPage
         Title="MonkeyPage"
         IconImageSource="ic_monkey.png" />-->
 
-    <!--<local:Profile
+    <local:Profile
         Title="Profile"
         IconImageSource="ic_monkey.png" />
 
@@ -34,7 +34,7 @@
         Title="Popup"
         IconImageSource="ic_monkey.png" />
 
-    <local:NewsPage
+    <!--<local:NewsPage
         Title="News"
         IconImageSource="ic_monkey.png" />-->
 

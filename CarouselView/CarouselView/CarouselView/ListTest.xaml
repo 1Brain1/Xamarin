@@ -11,6 +11,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Frame
+                        HasShadow="False"
                             BackgroundColor="#F2F2F2">
                             <StackLayout>
                                 
@@ -28,12 +29,14 @@
         HorizontalOptions="Center">
 
         <Frame
+            HasShadow="False"
             Padding="3"
             WidthRequest="120"
             HeightRequest="60"
             BackgroundColor="#60E17C"
             CornerRadius="30">
             <Frame
+                HasShadow="False"
                 Padding="0"
                 HorizontalOptions="End"
                 VerticalOptions="Center"

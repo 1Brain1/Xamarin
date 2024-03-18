@@ -58,6 +58,7 @@
             Grid.Row="1"
             Margin="20,0">
             <Frame
+                HasShadow="False"
                 Padding="0"
                 CornerRadius="10"
                 BackgroundColor="#F2F2F2"
@@ -71,6 +72,7 @@
                         VerticalOptions="Center"
                         HorizontalOptions="Start">
                         <Frame
+                            HasShadow="False"
                             Padding="0"
                             BackgroundColor="White"
                             HeightRequest="110"

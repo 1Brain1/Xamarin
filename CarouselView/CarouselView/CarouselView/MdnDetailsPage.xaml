@@ -131,6 +131,7 @@
 
                     <!--Date-->
                     <Frame
+                        HasShadow="False"
                         Grid.Row="1"
                         Margin="10,0"
                         Padding="20"

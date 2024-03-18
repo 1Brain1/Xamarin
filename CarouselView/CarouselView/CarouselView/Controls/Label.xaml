@@ -7,6 +7,7 @@
     x:Name="this"
     Padding="10,0"
     CornerRadius="10"
+    HasShadow="False"
     IsVisible="{Binding IsVisibleLabel, Source={x:Reference this}}">
     <Label
         HorizontalTextAlignment="Center"
