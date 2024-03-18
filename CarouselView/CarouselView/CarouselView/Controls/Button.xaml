@@ -6,6 +6,7 @@
     x:Class="CarouselView.Controls.Button"
     x:Name="This"
     Padding="10,5"
+    HasShadow="False"
     CornerRadius="10">
     <StackLayout
         HorizontalOptions="Center"
