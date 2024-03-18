@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,22 +14,20 @@ namespace CarouselView
 
         private void TypePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void ServicePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void PriorityPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void SubmitButton_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Your message was sent successfully", "One of our operators will be with you shortly ", "Got it");
+            DisplayAlert("Your message was sent successfully", "One of our operators will be with you shortly ",
+                "Got it");
         }
     }
 }

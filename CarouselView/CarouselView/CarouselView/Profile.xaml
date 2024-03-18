@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -104,7 +105,6 @@
                         Padding="7,0"
                         VerticalOptions="Center">
                         <Grid
-                            Grid.Column="1"
                             RowDefinitions="Auto,Auto,Auto,Auto"
                             ColumnDefinitions="Auto,*">
                             <Image
@@ -140,11 +140,11 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span
-                                            Text="Lansdowne"/>
-                                        <Span 
-                                            Text=", "/>
+                                            Text="Lansdowne" />
                                         <Span
-                                            Text=",PA"/>
+                                            Text=", " />
+                                        <Span
+                                            Text=",PA" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>

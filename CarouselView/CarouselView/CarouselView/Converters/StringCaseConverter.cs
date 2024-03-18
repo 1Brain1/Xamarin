@@ -1,26 +1,27 @@
-﻿using System.Globalization;
-using System;
+﻿using System;
+using System.Globalization;
 using Xamarin.Forms;
 
-namespace CarouselView.Converters;
-
-public class StringCaseConverter : IValueConverter
+namespace CarouselView.Converters
 {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public class StringCaseConverter : IValueConverter
     {
-        switch ((parameter as string).ToUpper()[0])
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            case 'U':
-                return ((string)value).ToUpper();
-            case 'L':
-                return ((string)value).ToLower();
-            default:
-                return (string)value;
-        };
-    }
+            switch ((parameter as string).ToUpper()[0])
+            {
+                case 'U':
+                    return ((string)value).ToUpper();
+                case 'L':
+                    return ((string)value).ToLower();
+                default:
+                    return (string)value;
+            }
+        }
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        throw new NotSupportedException();
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
     }
 }

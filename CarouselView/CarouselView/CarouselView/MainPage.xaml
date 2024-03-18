@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <TabbedPage
     xmlns:local="clr-namespace:CarouselView"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -36,7 +37,7 @@
     <local:NewsPage
         Title="News"
         IconImageSource="ic_monkey.png" />-->
-    
+
     <!--<local:ListTest
         Title="Switch"
         IconImageSource="ic_monkey.png" />-->

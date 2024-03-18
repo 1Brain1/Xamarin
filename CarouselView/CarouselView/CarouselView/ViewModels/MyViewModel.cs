@@ -1,27 +1,28 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System.Windows.Input;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using System.Windows.Input;
 
-namespace CarouselView.ViewModels;
-
-public class MyViewModel : ViewModelBase
+namespace CarouselView.ViewModels
 {
-    private string _switchValue;
-
-    public string SwitchValue
+    public class MyViewModel : ViewModelBase
     {
-        get { return _switchValue; }
-        set { Set(ref _switchValue, value); }
-    }
+        private string _switchValue;
 
-    public ICommand MyCommand => new RelayCommand<bool>((value) => ExecuteSwitchCommand(value));
+        public string SwitchValue
+        {
+            get => _switchValue;
+            set => Set(ref _switchValue, value);
+        }
 
-    public MyViewModel()
-    {
-    }
+        public ICommand MyCommand => new RelayCommand<bool>((value) => ExecuteSwitchCommand(value));
 
-    private void ExecuteSwitchCommand(bool value)
-    {
-        SwitchValue = value.ToString();
+        public MyViewModel()
+        {
+        }
+
+        private void ExecuteSwitchCommand(bool value)
+        {
+            SwitchValue = value.ToString();
+        }
     }
 }

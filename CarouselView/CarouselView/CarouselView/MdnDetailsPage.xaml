@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     xmlns:controls="clr-namespace:CarouselView.Controls"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -198,10 +199,10 @@
                             TextColor="#514D4D" />
 
 
-                        <BoxView 
+                        <BoxView
                             BackgroundColor="Green"
                             Grid.ColumnSpan="4"
-                            Grid.Row="1"/>
+                            Grid.Row="1" />
 
                         <StackLayout
                             Grid.Row="1"
@@ -214,7 +215,7 @@
                                 BackgroundColor="Red"
                                 WidthRequest="{Binding Source={x:Reference Conteiner}, Path=Width}"
                                 HeightRequest="{Binding Source={x:Reference Conteiner}, Path=Height}" />-->
-                            
+
                             <BoxView
                                 CornerRadius="{Binding Source={x:Reference Conteiner}, Path=Width}"
                                 BackgroundColor="Red"
@@ -252,7 +253,7 @@
                                 Command="{Binding Test}" />
                         </controls:Button.GestureRecognizers>
                     </controls:Button>
-                </StackLayout>                
+                </StackLayout>
             </StackLayout>
         </Grid>
     </Grid>

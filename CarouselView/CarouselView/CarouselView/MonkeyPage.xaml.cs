@@ -1,39 +1,36 @@
-﻿using Newtonsoft.Json;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Net.Http;
-
+using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CarouselView;
-
-[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class MonkeyPage : ContentPage
+namespace CarouselView
 {
-    private const string monkeyUrl = "https://montemagno.com/monkeys.json";
-    private readonly HttpClient _httpClient = new();
-
-    public ObservableCollection<Monkey> Monkeys { get; set; } = new();
-
-    public MonkeyPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MonkeyPage : ContentPage
     {
-        InitializeComponent();
+        private const string monkeyUrl = "https://montemagno.com/monkeys.json";
+        private readonly HttpClient _httpClient = new HttpClient();
 
-        BindingContext = this;
-    }
+        public ObservableCollection<Monkey> Monkeys { get; set; } = new ObservableCollection<Monkey>();
 
-    protected async override void OnAppearing()
-    {
-        base.OnAppearing();
-
-        var monkeyJson = await _httpClient.GetStringAsync(monkeyUrl);
-        var monkeys = JsonConvert.DeserializeObject<Monkey[]>(monkeyJson);
-
-        Monkeys?.Clear();
-
-        foreach (var monkey in monkeys)
+        public MonkeyPage()
         {
-            Monkeys.Add(monkey);
+            InitializeComponent();
+
+            BindingContext = this;
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var monkeyJson = await _httpClient.GetStringAsync(monkeyUrl);
+            var monkeys = JsonConvert.DeserializeObject<Monkey[]>(monkeyJson);
+
+            Monkeys?.Clear();
+
+            foreach (var monkey in monkeys) Monkeys.Add(monkey);
         }
     }
 }

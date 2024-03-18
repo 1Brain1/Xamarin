@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Frame
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -12,7 +13,7 @@
         <Image
             IsVisible="{Binding IsIconVisible, Source={x:Reference This}}"
             Source="{Binding Source, Source={x:Reference This}}"
-            Scale="{Binding IconScale, Source={x:Reference This}}"/>
+            Scale="{Binding IconScale, Source={x:Reference This}}" />
         <Label
             Padding="3,0"
             HorizontalTextAlignment="Center"
@@ -22,5 +23,5 @@
             FontAttributes="{Binding FontAttributes, Source={x:Reference This}}"
             FontSize="{Binding FontSize, Source={x:Reference This}}"
             TextTransform="{Binding TextTransform, Source={x:Reference This}}" />
-    </StackLayout>    
+    </StackLayout>
 </Frame>

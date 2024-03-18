@@ -1,12 +1,13 @@
 ﻿using Xamarin.Forms;
 
-namespace CarouselView;
-
-public partial class MainPage : TabbedPage
+namespace CarouselView
 {
-    public MainPage()
+    public partial class MainPage : TabbedPage
     {
-        InitializeComponent();
-        CurrentPage = Children[2];
+        public MainPage()
+        {
+            InitializeComponent();
+            CurrentPage = Children[0];
+        }
     }
 }

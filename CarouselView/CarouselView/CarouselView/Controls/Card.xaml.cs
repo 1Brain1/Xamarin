@@ -1,150 +1,162 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CarouselView.Controls;
-
-[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class Card
+namespace CarouselView.Controls
 {
-    public static readonly BindableProperty TextFirstRowProperty =
-        BindableProperty.Create(nameof(TextFirstRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
-
-    public static readonly BindableProperty ValueFirstRowProperty =
-        BindableProperty.Create(nameof(ValueFirstRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
-
-    public static readonly BindableProperty TextColorFirstRowProperty =
-        BindableProperty.Create(nameof(TextColorFirstRow), typeof(Color), typeof(Card), Color.White, BindingMode.TwoWay);
-
-    public static readonly BindableProperty FontAttributesFirstRowProperty =
-        BindableProperty.Create(nameof(FontAttributesFirstRow), typeof(FontAttributes), typeof(Card), FontAttributes.Bold, BindingMode.TwoWay);
-
-    public static readonly BindableProperty FontSizeFirstRowProperty =
-        BindableProperty.Create(nameof(FontSizeFirstRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
-
-    public static readonly BindableProperty TextTransformFirstRowProperty =
-        BindableProperty.Create(nameof(TextTransformFirstRow), typeof(TextTransform), typeof(Card), TextTransform.Uppercase, BindingMode.TwoWay);
-
-    public static readonly BindableProperty TextSecondRowProperty =
-        BindableProperty.Create(nameof(TextSecondRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
-
-    public static readonly BindableProperty ValueSecondRowProperty =
-        BindableProperty.Create(nameof(ValueSecondRow), typeof(string), typeof(Card), string.Empty, BindingMode.TwoWay);
-
-    public static readonly BindableProperty TextColorSecondRowProperty =
-        BindableProperty.Create(nameof(TextColorSecondRow), typeof(Color), typeof(Card), Color.White, BindingMode.TwoWay);
-
-    public static readonly BindableProperty FontAttributesSecondRowProperty =
-        BindableProperty.Create(nameof(FontAttributesSecondRow), typeof(FontAttributes), typeof(Card), FontAttributes.Bold, BindingMode.TwoWay);
-
-    public static readonly BindableProperty FontSizeSecondRowProperty =
-        BindableProperty.Create(nameof(FontSizeSecondRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
-
-    public static readonly BindableProperty TextTransformSecondRowProperty =
-        BindableProperty.Create(nameof(TextTransformSecondRow), typeof(TextTransform), typeof(Card), TextTransform.Uppercase, BindingMode.TwoWay);
-
-    public static readonly BindableProperty IsIconVisibleProperty =
-        BindableProperty.Create(nameof(IsIconVisible), typeof(bool), typeof(Card), true, BindingMode.TwoWay);
-
-    public static readonly BindableProperty SourceProperty =
-        BindableProperty.Create(nameof(Source), typeof(ImageSource), typeof(Card), default(ImageSource), BindingMode.TwoWay);
-
-    public static readonly BindableProperty IconScaleProperty =
-        BindableProperty.Create(nameof(IconScale), typeof(double), typeof(Card), 1d, BindingMode.TwoWay);
-
-    public Card()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Card
     {
-        InitializeComponent();
-    }
+        public static readonly BindableProperty TextFirstRowProperty =
+            BindableProperty.Create(nameof(TextFirstRow), typeof(string), typeof(Card), string.Empty,
+                BindingMode.TwoWay);
 
-    public string TextFirstRow
-    {
-        get => (string)GetValue(TextFirstRowProperty);
-        set => SetValue(TextFirstRowProperty, value);
-    }
+        public static readonly BindableProperty ValueFirstRowProperty =
+            BindableProperty.Create(nameof(ValueFirstRow), typeof(string), typeof(Card), string.Empty,
+                BindingMode.TwoWay);
 
-    public string ValueFirstRow
-    {
-        get => (string)GetValue(ValueFirstRowProperty);
-        set => SetValue(ValueFirstRowProperty, value);
-    }
+        public static readonly BindableProperty TextColorFirstRowProperty =
+            BindableProperty.Create(nameof(TextColorFirstRow), typeof(Color), typeof(Card), Color.White,
+                BindingMode.TwoWay);
 
-    public Color TextColorFirstRow
-    {
-        get => (Color)GetValue(TextColorFirstRowProperty);
-        set => SetValue(TextColorFirstRowProperty, value);
-    }
+        public static readonly BindableProperty FontAttributesFirstRowProperty =
+            BindableProperty.Create(nameof(FontAttributesFirstRow), typeof(FontAttributes), typeof(Card),
+                FontAttributes.Bold, BindingMode.TwoWay);
 
-    public FontAttributes FontAttributesFirstRow
-    {
-        get => (FontAttributes)GetValue(FontAttributesFirstRowProperty);
-        set => SetValue(FontAttributesFirstRowProperty, value);
-    }
+        public static readonly BindableProperty FontSizeFirstRowProperty =
+            BindableProperty.Create(nameof(FontSizeFirstRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
 
-    [TypeConverter(typeof(FontSizeConverter))]
-    public double FontSizeFirstRow
-    {
-        get => (double)GetValue(FontSizeFirstRowProperty);
-        set => SetValue(FontSizeFirstRowProperty, value);
-    }
+        public static readonly BindableProperty TextTransformFirstRowProperty =
+            BindableProperty.Create(nameof(TextTransformFirstRow), typeof(TextTransform), typeof(Card),
+                TextTransform.Uppercase, BindingMode.TwoWay);
 
-    public TextTransform TextTransformFirstRow
-    {
-        get => (TextTransform)GetValue(TextTransformFirstRowProperty);
-        set => SetValue(TextTransformFirstRowProperty, value);
-    }
+        public static readonly BindableProperty TextSecondRowProperty =
+            BindableProperty.Create(nameof(TextSecondRow), typeof(string), typeof(Card), string.Empty,
+                BindingMode.TwoWay);
 
-    public string TextSecondRow
-    {
-        get => (string)GetValue(TextSecondRowProperty);
-        set => SetValue(TextSecondRowProperty, value);
-    }
+        public static readonly BindableProperty ValueSecondRowProperty =
+            BindableProperty.Create(nameof(ValueSecondRow), typeof(string), typeof(Card), string.Empty,
+                BindingMode.TwoWay);
 
-    public string ValueSecondRow
-    {
-        get => (string)GetValue(ValueSecondRowProperty);
-        set => SetValue(ValueSecondRowProperty, value);
-    }
+        public static readonly BindableProperty TextColorSecondRowProperty =
+            BindableProperty.Create(nameof(TextColorSecondRow), typeof(Color), typeof(Card), Color.White,
+                BindingMode.TwoWay);
 
-    public Color TextColorSecondRow
-    {
-        get => (Color)GetValue(TextColorSecondRowProperty);
-        set => SetValue(TextColorSecondRowProperty, value);
-    }
+        public static readonly BindableProperty FontAttributesSecondRowProperty =
+            BindableProperty.Create(nameof(FontAttributesSecondRow), typeof(FontAttributes), typeof(Card),
+                FontAttributes.Bold, BindingMode.TwoWay);
 
-    public FontAttributes FontAttributesSecondRow
-    {
-        get => (FontAttributes)GetValue(FontAttributesSecondRowProperty);
-        set => SetValue(FontAttributesSecondRowProperty, value);
-    }
+        public static readonly BindableProperty FontSizeSecondRowProperty =
+            BindableProperty.Create(nameof(FontSizeSecondRow), typeof(double), typeof(Card), 12d, BindingMode.TwoWay);
 
-    [TypeConverter(typeof(FontSizeConverter))]
-    public double FontSizeSecondRow
-    {
-        get => (double)GetValue(FontSizeSecondRowProperty);
-        set => SetValue(FontSizeSecondRowProperty, value);
-    }
+        public static readonly BindableProperty TextTransformSecondRowProperty =
+            BindableProperty.Create(nameof(TextTransformSecondRow), typeof(TextTransform), typeof(Card),
+                TextTransform.Uppercase, BindingMode.TwoWay);
 
-    public TextTransform TextTransformSecondRow
-    {
-        get => (TextTransform)GetValue(TextTransformSecondRowProperty);
-        set => SetValue(TextTransformSecondRowProperty, value);
-    }
+        public static readonly BindableProperty IsIconVisibleProperty =
+            BindableProperty.Create(nameof(IsIconVisible), typeof(bool), typeof(Card), true, BindingMode.TwoWay);
 
-    public bool IsIconVisible
-    {
-        get => (bool)GetValue(IsIconVisibleProperty);
-        set => SetValue(IsIconVisibleProperty, value);
-    }
+        public static readonly BindableProperty SourceProperty =
+            BindableProperty.Create(nameof(Source), typeof(ImageSource), typeof(Card), default(ImageSource),
+                BindingMode.TwoWay);
 
-    public ImageSource Source
-    {
-        get => (ImageSource)GetValue(SourceProperty);
-        set => SetValue(SourceProperty, value);
-    }
+        public static readonly BindableProperty IconScaleProperty =
+            BindableProperty.Create(nameof(IconScale), typeof(double), typeof(Card), 1d, BindingMode.TwoWay);
 
-    public double IconScale
-    {
-        get => (double)GetValue(IconScaleProperty);
-        set => SetValue(IconScaleProperty, value);
+        public Card()
+        {
+            InitializeComponent();
+        }
+
+        public string TextFirstRow
+        {
+            get => (string)GetValue(TextFirstRowProperty);
+            set => SetValue(TextFirstRowProperty, value);
+        }
+
+        public string ValueFirstRow
+        {
+            get => (string)GetValue(ValueFirstRowProperty);
+            set => SetValue(ValueFirstRowProperty, value);
+        }
+
+        public Color TextColorFirstRow
+        {
+            get => (Color)GetValue(TextColorFirstRowProperty);
+            set => SetValue(TextColorFirstRowProperty, value);
+        }
+
+        public FontAttributes FontAttributesFirstRow
+        {
+            get => (FontAttributes)GetValue(FontAttributesFirstRowProperty);
+            set => SetValue(FontAttributesFirstRowProperty, value);
+        }
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double FontSizeFirstRow
+        {
+            get => (double)GetValue(FontSizeFirstRowProperty);
+            set => SetValue(FontSizeFirstRowProperty, value);
+        }
+
+        public TextTransform TextTransformFirstRow
+        {
+            get => (TextTransform)GetValue(TextTransformFirstRowProperty);
+            set => SetValue(TextTransformFirstRowProperty, value);
+        }
+
+        public string TextSecondRow
+        {
+            get => (string)GetValue(TextSecondRowProperty);
+            set => SetValue(TextSecondRowProperty, value);
+        }
+
+        public string ValueSecondRow
+        {
+            get => (string)GetValue(ValueSecondRowProperty);
+            set => SetValue(ValueSecondRowProperty, value);
+        }
+
+        public Color TextColorSecondRow
+        {
+            get => (Color)GetValue(TextColorSecondRowProperty);
+            set => SetValue(TextColorSecondRowProperty, value);
+        }
+
+        public FontAttributes FontAttributesSecondRow
+        {
+            get => (FontAttributes)GetValue(FontAttributesSecondRowProperty);
+            set => SetValue(FontAttributesSecondRowProperty, value);
+        }
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double FontSizeSecondRow
+        {
+            get => (double)GetValue(FontSizeSecondRowProperty);
+            set => SetValue(FontSizeSecondRowProperty, value);
+        }
+
+        public TextTransform TextTransformSecondRow
+        {
+            get => (TextTransform)GetValue(TextTransformSecondRowProperty);
+            set => SetValue(TextTransformSecondRowProperty, value);
+        }
+
+        public bool IsIconVisible
+        {
+            get => (bool)GetValue(IsIconVisibleProperty);
+            set => SetValue(IsIconVisibleProperty, value);
+        }
+
+        public ImageSource Source
+        {
+            get => (ImageSource)GetValue(SourceProperty);
+            set => SetValue(SourceProperty, value);
+        }
+
+        public double IconScale
+        {
+            get => (double)GetValue(IconScaleProperty);
+            set => SetValue(IconScaleProperty, value);
+        }
     }
 }
