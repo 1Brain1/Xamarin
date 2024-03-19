@@ -14,9 +14,9 @@
     SelectedTabColor="Red"
     UnselectedTabColor="Black">
 
-    <local:MdnDetailsPage
+    <!--<local:MdnDetailsPage
         Title="MdnDetails"
-        IconImageSource="ic_mdn.png" />
+        IconImageSource="ic_mdn.png" />-->
 
     <!--<local:ContactSupport
         Title="Contact Support"
@@ -25,14 +25,17 @@
     <!--<local:MonkeyPage
         Title="MonkeyPage"
         IconImageSource="ic_monkey.png" />-->
+    
+    <local:NewProfile
+        Title="NEW PROFILE" />
 
     <local:Profile
         Title="Profile"
         IconImageSource="ic_monkey.png" />
 
-    <local:ProfilePopup
+    <!--<local:ProfilePopup
         Title="Popup"
-        IconImageSource="ic_monkey.png" />
+        IconImageSource="ic_monkey.png" />-->
 
     <!--<local:NewsPage
         Title="News"

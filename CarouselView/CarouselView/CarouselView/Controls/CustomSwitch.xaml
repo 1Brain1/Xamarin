@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<StackLayout
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarouselView.Controls.CustomSwitch"
+    Orientation="Horizontal"
+    x:Name="this">
+
+    <StackLayout
+        VerticalOptions="Center">
+        <Label
+            Text="{Binding Text, Source={x:Reference this}}"
+            TextTransform="{Binding TextTransform, Source={x:Reference this}}"
+            FontAttributes="{Binding FontAttributes, Source={x:Reference this}}"
+            TextColor="{Binding TextColor, Source={x:Reference this}}"
+            FontSize="{Binding FontSize, Source={x:Reference this}}" />
+    </StackLayout>
+    <StackLayout
+        VerticalOptions="Center">
+        <Switch
+            IsToggled="true"
+            VerticalOptions="Start" />
+    </StackLayout>
+
+</StackLayout>

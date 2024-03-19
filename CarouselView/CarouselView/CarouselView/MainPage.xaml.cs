@@ -7,7 +7,7 @@ namespace CarouselView
         public MainPage()
         {
             InitializeComponent();
-            CurrentPage = Children[0];
+            //CurrentPage = Children[0];
         }
     }
 }
