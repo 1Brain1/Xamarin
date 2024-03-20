@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:CarouselView.Converters"
     xmlns:controls="clr-namespace:CarouselView.Controls"
+    xmlns:image="clr-namespace:CarouselView.Core.Resources;assembly=CarouselView"
     xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     x:Class="CarouselView.NewProfile">
@@ -16,19 +17,19 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
+    <ScrollView
+        BackgroundColor="#1854CA">
+        
         <Grid
             RowDefinitions="Auto,*"
-            BackgroundColor="#1854CA"
-            Margin="24,40"
-            HorizontalOptions="FillAndExpand">
+            BackgroundColor="Yellow">
+            <!-- RowDefinitions="0.2*, 0.8*"> -->
 
             <!--PROFILE IMAGE-->
             <Grid
-                Grid.Row="0"
-                Margin="0,20,0,10"
-                VerticalOptions="Center"
-                HorizontalOptions="Center">
+                Margin="30"
+                BackgroundColor="Red"
+                Grid.Row="0">
                 <Frame
                     HasShadow="False"
                     Padding="0"
@@ -36,6 +37,7 @@
                     HeightRequest="110"
                     WidthRequest="110"
                     HorizontalOptions="Center"
+                    VerticalOptions="Center"
                     CornerRadius="55">
                     <Label
                         VerticalOptions="Center"
@@ -43,205 +45,278 @@
                         TextColor="Black"
                         FontFamily="Icons"
                         FontSize="70"
-                        Text="O" />
+                        Text="{x:Static image:IconFont.Profile}" />
                 </Frame>
                 <forms:CachedImage
                     HeightRequest="110"
                     WidthRequest="110"
-                    Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
+                    Source="{Binding Profile.Avatar, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
                     <forms:CachedImage.Transformations>
                         <transformations:CircleTransformation />
                     </forms:CachedImage.Transformations>
                 </forms:CachedImage>
-
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding OpenPickAvatarPopup}" />
-                </Grid.GestureRecognizers>
+                
+                <forms:CachedImage
+                    IsVisible="False"
+                    Aspect="AspectFill"
+                    Source="{Binding Profile.Avatar, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
+                </forms:CachedImage>
+                
+                <!-- <Grid.GestureRecognizers> -->
+                <!--     <TapGestureRecognizer -->
+                <!--         Command="{Binding OpenPickAvatarPopup}" /> -->
+                <!-- </Grid.GestureRecognizers> -->
             </Grid>
 
             <BoxView
                 Grid.Row="1"
                 CornerRadius="40,40,0,0"
-                BackgroundColor="White"/>
+                BackgroundColor="White" />
 
             <!--PROFILE DATA-->
             <StackLayout
-                Margin="20"
+                Spacing="10"
+                Margin="30,0"
+                x:Name="profileData"
                 Grid.Row="1">
-                
-                <controls:CustomSwitch
-                    VerticalOptions="Start"
-                    HorizontalOptions="Center"
-                    Text="Notifications"
-                    TextColor="#6C6C6C" />
-                
+
+                <!--SWITCH-->
                 <StackLayout
-                    Spacing="10"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand">
-                    
-                    <!--FIRST / LAST NAME-->
-                    <Grid
-                        RowSpacing="0"
-                        RowDefinitions="*,*"
-                        ColumnDefinitions="*,*">
-                        <!--FIRST NAME-->
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Orientation="Horizontal">
-                            <Label
-                                TextColor="#6C6C6C"
-                                Text="FIRST NAME" />
-                            <Label
-                                VerticalTextAlignment="Center"
-                                Text="*"
-                                TextColor="#FC8A8A" />
-                        </StackLayout>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="0" />
-                        <!--LAST NAME-->
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Orientation="Horizontal">
-                            <Label
-                                TextColor="#6C6C6C"
-                                Text="LAST NAME" />
-                            <Label
-                                VerticalTextAlignment="Center"
-                                Text="*"
-                                TextColor="#FC8A8A" />
-                        </StackLayout>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="1" />
-                    </Grid>
-                    
-                    <!--EMAIL-->
+                    Margin="10"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
                     <StackLayout
-                        Orientation="Horizontal">
+                        VerticalOptions="Center">
                         <Label
-                            TextColor="#6C6C6C"
-                            Text="EMAIL" />
-                        <Label
-                            VerticalTextAlignment="Center"
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            Text="!NOTIFICATIONS!"
+                            TextTransform="Uppercase"
+                            FontAttributes="Bold"
+                            TextColor="#6C6C6C" />
                     </StackLayout>
-                    <Entry />
-
-                    <!--PHONE-->
                     <StackLayout
-                        Orientation="Horizontal">
-                        <Label
-                            TextColor="#6C6C6C"
-                            Text="PHONE" />
-                        <Label
-                            VerticalTextAlignment="Center"
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                        VerticalOptions="Center">
+                        <Switch
+                            IsToggled="true"
+                            VerticalOptions="Start" />
                     </StackLayout>
-                    <Entry />
-
-                    <!--STATE / ZIP-->
-                    <Grid
-                        RowSpacing="0"
-                        RowDefinitions="*,*"
-                        ColumnDefinitions="*,*">
-                        <!--STATE-->
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Orientation="Horizontal">
-                            <Label
-                                TextColor="#6C6C6C"
-                                Text="STATE" />
-                            <Label
-                                VerticalTextAlignment="Center"
-                                Text="*"
-                                TextColor="#FC8A8A" />
-                        </StackLayout>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="0" />
-                        <!--ZIP-->
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Orientation="Horizontal">
-                            <Label
-                                TextColor="#6C6C6C"
-                                Text="ZIP" />
-                            <Label
-                                VerticalTextAlignment="Center"
-                                Text="*"
-                                TextColor="#FC8A8A" />
-                        </StackLayout>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="1" />
-                    </Grid>
-
-                    <!--CITY / ADDRESS-->
-                    <Grid
-                        RowSpacing="0"
-                        RowDefinitions="*,*"
-                        ColumnDefinitions="*,*">
-                        <!--CITY-->
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Orientation="Horizontal">
-                            <Label
-                                TextColor="#6C6C6C"
-                                Text="CITY" />
-                            <Label
-                                VerticalTextAlignment="Center"
-                                Text="*"
-                                TextColor="#FC8A8A" />
-                        </StackLayout>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="0" />
-                        <!--ADDRESS-->
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Orientation="Horizontal">
-                            <Label
-                                TextColor="#6C6C6C"
-                                Text="ADDRESS" />
-                            <Label
-                                VerticalTextAlignment="Center"
-                                Text="*"
-                                TextColor="#FC8A8A" />
-                        </StackLayout>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="1" />
-                    </Grid>
-
-                    <!--BUTTONS-->
-                    <Grid>
-                        <Button
-                            Grid.Column="0"
-                            CornerRadius="20"
-                            Text="LOGOUT"
-                            TextColor="White"
-                            BackgroundColor="#1854CA" />
-                        <Button
-                            Grid.Column="1"
-                            CornerRadius="20"
-                            Text="UPDATE"
-                            TextColor="White"
-                            BackgroundColor="#00D7D9" />
-                    </Grid>
                 </StackLayout>
-            </StackLayout>
 
+                <!--FIRST / LAST NAME-->
+                <Grid
+                    RowSpacing="0"
+                    RowDefinitions="Auto,Auto"
+                    ColumnDefinitions="*,*">
+
+                    <!--FIRST NAME-->
+                    <StackLayout
+                        Margin="10,0"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!FIRST NAME!" />
+                        <Label
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        BorderColor="#E5E7E9"
+                        TextAlignment="Center"
+                        PlaceHolder="!FIRST NAME!"
+                        ValidatableText="{Binding FirstName}" />
+
+                    <!--LAST NAME-->
+                    <StackLayout
+                        Margin="10,0"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!LAST NAME!" />
+                        <Label
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BorderColor="#E5E7E9"
+                        TextAlignment="Center"
+                        PlaceHolder="!LAST NAME!"
+                        ValidatableText="{Binding LastName}" />
+                </Grid>
+
+                <!--EMAIL-->
+                <Grid
+                    RowSpacing="0"
+                    RowDefinitions="Auto,Auto">
+                    <StackLayout
+                        Grid.Row="0"
+                        Margin="10,0"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!EMAIL!" />
+                        <Label
+                            VerticalTextAlignment="Center"
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        BorderColor="#E5E7E9"
+                        TextAlignment="Center"
+                        PlaceHolder="!EMAIL!"
+                        ValidatableText="{Binding Email}"
+                        IsEnabled="False" />
+                </Grid>
+
+                <!--PHONE-->
+                <Grid
+                    RowSpacing="0"
+                    RowDefinitions="Auto,Auto">
+                    <StackLayout
+                        Grid.Row="0"
+                        Margin="10,0"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!PHONE!" />
+                        <Label
+                            VerticalTextAlignment="Center"
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        BorderColor="#E5E7E9"
+                        TextAlignment="Center"
+                        PlaceHolder="!PHONE!"
+                        ValidatableText="{Binding Phone}"
+                        Keyboard="Telephone" />
+                </Grid>
+
+                <!--STATE / ZIP-->
+                <Grid
+                    RowSpacing="0"
+                    RowDefinitions="Auto,Auto"
+                    ColumnDefinitions="*,*">
+                    <!--STATE-->
+                    <StackLayout
+                        Margin="10,0"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!STATE!" />
+                        <Label
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        BorderColor="#E5E7E9"
+                        TextAlignment="Center"
+                        PlaceHolder="!STATE!"
+                        ValidatableText="{Binding State}" />
+
+                    <!--ZIP-->
+                    <StackLayout
+                        Margin="10,0"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!ZIP!" />
+                        <Label
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        TextAlignment="Center"
+                        BorderColor="#E5E7E9"
+                        PlaceHolder="!ZIP!"
+                        ValidatableText="{Binding Zip}" />
+                </Grid>
+
+                <!--CITY / ADDRESS-->
+                <Grid
+                    RowSpacing="0"
+                    RowDefinitions="Auto,Auto"
+                    ColumnDefinitions="*,*">
+                    <!--CITY-->
+                    <StackLayout
+                        Margin="10,0"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!CITY!" />
+                        <Label
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        TextAlignment="Center"
+                        BorderColor="#E5E7E9"
+                        PlaceHolder="!CITY!"
+                        ValidatableText="{Binding City}" />
+
+                    <!--ADDRESS-->
+                    <StackLayout
+                        Margin="10,0"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="#6C6C6C"
+                            Text="!ADDRESS!" />
+                        <Label
+                            Text="*"
+                            TextColor="#FC8A8A" />
+                    </StackLayout>
+                    <controls:ValidationEntry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BorderColor="#E5E7E9"
+                        TextAlignment="Center"
+                        PlaceHolder="!ADDRESS!"
+                        ValidatableText="{Binding Address}" />
+                </Grid>
+
+                <!--BUTTONS-->
+                <Grid
+                    ColumnDefinitions="*,*">
+                    <Button
+                        Grid.Column="0"
+                        CornerRadius="20"
+                        Text="!LOGOUT!"
+                        TextTransform="Uppercase"
+                        TextColor="White"
+                        Command="{Binding LogOutCommand}"
+                        BackgroundColor="#1854CA" />
+                    <Button
+                        Grid.Column="1"
+                        CornerRadius="20"
+                        TextTransform="Uppercase"
+                        Text="!UPDATE!"
+                        TextColor="White"
+                        BackgroundColor="#00D7D9"
+                        Command="{Binding SaveCommand}" />
+                </Grid>
+            </StackLayout>
         </Grid>
     </ScrollView>
 
