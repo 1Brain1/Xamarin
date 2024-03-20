@@ -81,8 +81,9 @@ namespace CarouselView.Controls
             typeof(ValidationEntry), Color.Green, BindingMode.TwoWay);
 
 
-        public static readonly BindableProperty PlaceHolderTextTransformProperty = BindableProperty.Create(nameof(PlaceHolderTextTransform), 
-            typeof(TextTransform), 
+        public static readonly BindableProperty PlaceHolderTextTransformProperty = BindableProperty.Create(
+            nameof(PlaceHolderTextTransform),
+            typeof(TextTransform),
             typeof(ValidationEntry), TextTransform.Uppercase, BindingMode.TwoWay);
 
 
@@ -95,6 +96,8 @@ namespace CarouselView.Controls
             typeof(FontAttributes),
             typeof(ValidationEntry), FontAttributes.None);
 
+        public static readonly BindableProperty MaskProperty = BindableProperty
+            .Create(nameof(Mask), typeof(string), typeof(ValidationEntry), default(ValidatableObject<string>), BindingMode.TwoWay);
 
         public ValidationEntry()
         {
@@ -204,13 +207,48 @@ namespace CarouselView.Controls
             set => SetValue(FontAttributesProperty, value);
         }
 
+        public string Mask
+        {
+            get => (string)GetValue(MaskProperty);
+            set => SetValue(MaskProperty, value);
+        }
+
+        private void ApplyMask(ref string maskedText)
+        {
+            if (string.IsNullOrEmpty(Mask))
+                return;
+
+            var value = maskedText;
+
+            var valueIndex = 0;
+            foreach (var maskChar in Mask)
+            {
+                if (maskChar == '0' && valueIndex < value.Length)
+                {
+                    valueIndex++;
+                }
+                else if (maskChar != '0')
+                {
+                    maskedText = maskedText.Insert(valueIndex, maskChar.ToString());
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+
+
+
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             base.OnPropertyChanged(propertyName);
             if (propertyName == ValidatableTextProperty.PropertyName && ValidatableText != null) SetValidatableObject();
             if (propertyName == PlaceHolderProperty.PropertyName)
                 TopPlaceHolder.TranslationX = PlaceHolder.Length * 1.2;
-            if ((propertyName == IsEnabledProperty.PropertyName || propertyName == BorderColorProperty.PropertyName) && !IsEnabled)
+            if ((propertyName == IsEnabledProperty.PropertyName || propertyName == BorderColorProperty.PropertyName) &&
+                !IsEnabled)
                 BorderView.Opacity = 0.6;
         }
 
@@ -247,7 +285,11 @@ namespace CarouselView.Controls
         {
             if (ValidatableText == null) return;
 
-            ValidatableText.Value = e.NewTextValue;
+            var maskedText = e.NewTextValue;
+            ApplyMask(ref maskedText); // Применяем маску
+
+            ValidatableText.Value = maskedText; // Устанавливаем значение
+
             var isEmptyText = string.IsNullOrEmpty(ValidatableText.Value);
             TopPlaceHolder.FadeTo(isEmptyText ? 0 : 1);
             TopPlaceHolder.TranslateTo(isEmptyText ? PlaceHolder.Length * 1.2 : 0, isEmptyText ? 28 : 0, 250,
@@ -258,5 +300,7 @@ namespace CarouselView.Controls
             ValidatableText.Validate();
             SetValid();
         }
+
+
     }
 }
