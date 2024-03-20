@@ -19,29 +19,25 @@
 
     <ScrollView
         BackgroundColor="#1854CA">
-        
+
         <Grid
-            RowDefinitions="Auto,*"
-            BackgroundColor="Yellow">
-            <!-- RowDefinitions="0.2*, 0.8*"> -->
+            RowDefinitions="0.3*, 0.7*">
 
             <!--PROFILE IMAGE-->
             <Grid
-                Margin="30"
-                BackgroundColor="Red"
-                Grid.Row="0">
+                Grid.Row="0"
+                Margin="0,48,0,0">
                 <Frame
                     HasShadow="False"
                     Padding="0"
-                    BackgroundColor="White"
-                    HeightRequest="110"
-                    WidthRequest="110"
-                    HorizontalOptions="Center"
+                    HeightRequest="140"
+                    WidthRequest="140"
                     VerticalOptions="Center"
-                    CornerRadius="55">
+                    HorizontalOptions="Center"
+                    CornerRadius="70">
                     <Label
-                        VerticalOptions="Center"
-                        HorizontalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
                         TextColor="Black"
                         FontFamily="Icons"
                         FontSize="70"
@@ -50,22 +46,21 @@
                 <forms:CachedImage
                     HeightRequest="110"
                     WidthRequest="110"
-                    Source="{Binding Profile.Avatar, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
+                    Source="{Binding Profile.Avatar1, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
                     <forms:CachedImage.Transformations>
                         <transformations:CircleTransformation />
                     </forms:CachedImage.Transformations>
                 </forms:CachedImage>
-                
+
                 <forms:CachedImage
                     IsVisible="False"
                     Aspect="AspectFill"
-                    Source="{Binding Profile.Avatar, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }">
-                </forms:CachedImage>
-                
-                <!-- <Grid.GestureRecognizers> -->
-                <!--     <TapGestureRecognizer -->
-                <!--         Command="{Binding OpenPickAvatarPopup}" /> -->
-                <!-- </Grid.GestureRecognizers> -->
+                    Source="{Binding Profile.Avatar, Converter={StaticResource Base64ToImageConverter}, Mode=OneWay }" />
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OpenPickAvatarPopup}" />
+                </Grid.GestureRecognizers>
             </Grid>
 
             <BoxView
@@ -75,10 +70,10 @@
 
             <!--PROFILE DATA-->
             <StackLayout
+                Grid.Row="1"
                 Spacing="10"
                 Margin="30,0"
-                x:Name="profileData"
-                Grid.Row="1">
+                x:Name="profileData">
 
                 <!--SWITCH-->
                 <StackLayout
@@ -96,6 +91,7 @@
                     <StackLayout
                         VerticalOptions="Center">
                         <Switch
+                            OnColor="#00D7D9"
                             IsToggled="true"
                             VerticalOptions="Start" />
                     </StackLayout>
@@ -115,10 +111,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!FIRST NAME!" />
                         <Label
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -136,10 +134,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!LAST NAME!" />
                         <Label
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -160,11 +160,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!EMAIL!" />
                         <Label
-                            VerticalTextAlignment="Center"
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -185,11 +186,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!PHONE!" />
                         <Label
-                            VerticalTextAlignment="Center"
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -197,7 +199,8 @@
                         TextAlignment="Center"
                         PlaceHolder="!PHONE!"
                         ValidatableText="{Binding Phone}"
-                        Keyboard="Telephone" />
+                        Keyboard="Telephone"
+                        Mask="" />
                 </Grid>
 
                 <!--STATE / ZIP-->
@@ -213,10 +216,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!STATE!" />
                         <Label
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -234,10 +239,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!ZIP!" />
                         <Label
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -261,10 +268,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!CITY!" />
                         <Label
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -282,10 +291,12 @@
                         Orientation="Horizontal">
                         <Label
                             TextColor="#6C6C6C"
+                            FontAttributes="Bold"
                             Text="!ADDRESS!" />
                         <Label
-                            Text="*"
-                            TextColor="#FC8A8A" />
+                            TextColor="#FC8A8A"
+                            FontAttributes="Bold"
+                            Text="*" />
                     </StackLayout>
                     <controls:ValidationEntry
                         Grid.Row="1"
@@ -298,6 +309,7 @@
 
                 <!--BUTTONS-->
                 <Grid
+                    Margin="0,5,0,0"
                     ColumnDefinitions="*,*">
                     <Button
                         Grid.Column="0"

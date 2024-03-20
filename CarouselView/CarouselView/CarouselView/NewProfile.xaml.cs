@@ -1,4 +1,6 @@
+using System.ComponentModel;
 using CarouselView.Core.Validation;
+using CarouselView.Core.Validation.Rules;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,9 +10,19 @@ namespace CarouselView
     public partial class NewProfile : ContentPage
     {
         public MyProfile Profile { get; set; } = new MyProfile();
-        //public ValidatableObject<string> Email { get; set; } = new ValidatableObject<string> { Value = "fox@customer.com" };
-        //public ValidatableObject<string> FirstName { get; set; } = new ValidatableObject<string> { Value = "White" };
-        //public ValidatableObject<string> LastName { get; set; } = new ValidatableObject<string> { Value = "Fox" };
+
+        public ValidatableObject<string>
+            Email { get; set; } //= new ValidatableObject<string> { Value = "fox@customer.com" };
+
+        public ValidatableObject<string> FirstName { get; set; } //= new ValidatableObject<string> { Value = "White" };
+        public ValidatableObject<string> LastName { get; set; } //= new ValidatableObject<string> { Value = "Fox" };
+        public ValidatableObject<string> Phone { get; set; } //= new ValidatableObject<string> { Value = "4567392057" };
+        public ValidatableObject<string> Zip { get; set; }
+        public ValidatableObject<string> State { get; set; }
+        public ValidatableObject<string> City { get; set; }
+        public ValidatableObject<string> Address { get; set; }
+        public bool IsValidForm { get; set; }
+
         public NewProfile()
         {
             InitializeComponent();
@@ -21,7 +33,55 @@ namespace CarouselView
             // // Привязка данных к контексту страницы
 
             var t = Profile;
+            SetValidation();
             BindingContext = this;
+        }
+
+        private void SetValidation()
+        {
+            FirstName = new ValidatableObject<string>();
+            LastName = new ValidatableObject<string>();
+            Email = new ValidatableObject<string>();
+            Phone = new ValidatableObject<string>();
+            Zip = new ValidatableObject<string>();
+            State = new ValidatableObject<string>();
+            City = new ValidatableObject<string>();
+            Address = new ValidatableObject<string>();
+            Phone = new ValidatableObject<string>();
+
+            FirstName.Validations.Add(new IsNotNullOrEmptyRule<string>
+                { ValidationMessage = "First name is required" });
+            LastName.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Last name is required" });
+            Zip.Validations.Add(new IsValidZipRule<string> { ValidationMessage = "Invalid ZIP code" });
+            State.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "State is required" });
+            City.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "City is required" });
+            Address.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Address is required" });
+
+            FirstName.PropertyChanged -= RequiredMemberChanged;
+            LastName.PropertyChanged -= RequiredMemberChanged;
+            Zip.PropertyChanged -= RequiredMemberChanged;
+            State.PropertyChanged -= RequiredMemberChanged;
+            City.PropertyChanged -= RequiredMemberChanged;
+            Address.PropertyChanged -= RequiredMemberChanged;
+
+            FirstName.PropertyChanged += RequiredMemberChanged;
+            LastName.PropertyChanged += RequiredMemberChanged;
+            Zip.PropertyChanged += RequiredMemberChanged;
+            State.PropertyChanged += RequiredMemberChanged;
+            City.PropertyChanged += RequiredMemberChanged;
+            Address.PropertyChanged += RequiredMemberChanged;
+        }
+
+        private void RequiredMemberChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsValid")
+                IsValidForm =
+                    FirstName.IsValid && !string.IsNullOrEmpty(FirstName.Value) &&
+                    LastName.IsValid && !string.IsNullOrEmpty(LastName.Value) &&
+                    Zip.IsValid && !string.IsNullOrEmpty(Zip.Value) &&
+                    State.IsValid && !string.IsNullOrEmpty(State.Value) &&
+                    City.IsValid && !string.IsNullOrEmpty(City.Value) &&
+                    Address.IsValid && !string.IsNullOrEmpty(Address.Value);
         }
     }
 
