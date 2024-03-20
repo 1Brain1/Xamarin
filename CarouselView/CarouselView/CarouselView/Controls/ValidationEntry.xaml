@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<StackLayout
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:CarouselView.Converters"
+    x:Class="CarouselView.Controls.ValidationEntry"
+    Spacing="3"
+    x:Name="this">
+
+    <StackLayout.Resources>
+        <ResourceDictionary>
+            <converters:FirstValidationErrorConverter
+                x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+    </StackLayout.Resources>
+
+    <Grid>
+        <Frame
+            x:Name="BorderView"
+            Margin="0,10,0,0"
+            BackgroundColor="{Binding BorderColor, Source={x:Reference this}}"
+            Padding="2"
+            HeightRequest="40"
+            CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+            HasShadow="False">
+            <Frame
+                CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+                Padding="16,0"
+                BackgroundColor="{Binding EntryBackgroundColor, Source={x:Reference this}}"
+                HasShadow="False">
+                <Grid
+                    ColumnDefinitions="*, auto">
+                    <Entry
+                        FontAttributes="{Binding FontAttributes, Source={x:Reference this}}"
+                        FontFamily="Regular"
+                        Text="{Binding ValidatableText.Value, Source={x:Reference this}}"
+                        VerticalOptions="Center"
+                        Placeholder="{Binding PlaceHolder, Source={x:Reference this}}"
+                        TextChanged="Entry_TextChanged"
+                        Keyboard="{Binding Keyboard, Source={x:Reference this}}"
+                        ReturnType="{Binding ReturnType, Source={x:Reference this}}"
+                        ReturnCommand="{Binding ReturnCommand, Source={x:Reference this}}"
+                        HorizontalTextAlignment="{Binding TextAlignment, Source={x:Reference this}}"
+                        MaxLength="{Binding MaxLength, Source={x:Reference this}}"
+                        IsPassword="{Binding IsPassword, Source={x:Reference this}}"
+                        TextColor="{Binding TextColor, Source={x:Reference this}}" />
+                    <Label
+                        x:Name="IconView"
+                        Grid.Column="1"
+                        FontFamily="Icons"
+                        FontSize="20"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Frame>
+        </Frame>
+
+        <Frame
+            x:Name="TopPlaceHolder"
+            Opacity="0"
+            TranslationY="28"
+            Scale="1.5"
+            Margin="10,0"
+            VerticalOptions="Start"
+            HasShadow="False"
+            Padding="4"
+            HorizontalOptions="Start"
+            BackgroundColor="White">
+            <Label
+                Padding="5,1"
+                FontFamily="Bold"
+                FontSize="Micro"
+                TextColor="Black"
+                TextTransform="{Binding PlaceHolderTextTransform, Source={x:Reference this}}"
+                Text="{Binding PlaceHolder, Source={x:Reference this}}" />
+        </Frame>
+    </Grid>
+
+    <Label
+        x:Name="ErrorLabel"
+        IsVisible="false"
+        Margin="16,0"
+        TextColor="{Binding TextErrorColor, Source={x:Reference this}}"
+        Text="{Binding ValidatableText.Errors, Source={x:Reference this}, Converter={StaticResource FirstValidationErrorConverter}, Mode=OneWay}"
+        FontFamily="Bold"
+        FontSize="Micro" />
+
+</StackLayout>
