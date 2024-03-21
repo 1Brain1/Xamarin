@@ -89,6 +89,11 @@
     <ItemGroup>
         <Compile Include="Main.cs"/>
         <Compile Include="AppDelegate.cs"/>
+        <Compile Include="Renderers\MyLabelRenderer.cs" />
+        <Compile Include="Renderers\MyCustomEntryRenderer.cs" />
+        <Compile Include="Renderers\MyEntryRenderer.cs" />
+        <Compile Include="Renderers\MyPickerRenderer.cs" />
+        <Compile Include="Renderers\WebViewRenderer.cs" />
         <None Include="Entitlements.plist"/>
         <None Include="Info.plist"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
