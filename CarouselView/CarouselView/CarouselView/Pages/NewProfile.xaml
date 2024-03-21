@@ -5,8 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:CarouselView.Converters"
     xmlns:controls="clr-namespace:CarouselView.Controls"
-    xmlns:image="clr-namespace:CarouselView.Core.Resources;assembly=CarouselView"
     xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:imageExtension="clr-namespace:CarouselView.MarkupExtension;assembly=CarouselView"
     xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     x:Class="CarouselView.Pages.NewProfile">
 
@@ -35,13 +38,17 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     CornerRadius="70">
-                    <Label
-                        VerticalTextAlignment="Center"
-                        HorizontalTextAlignment="Center"
-                        TextColor="Black"
-                        FontFamily="Icons"
-                        FontSize="70"
-                        Text="{x:Static image:IconFont.Profile}" />
+
+                    <ffSvg:SvgCachedImage
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Source="{imageExtension:ImageResource ic_profile.svg}"
+                        HeightRequest="70"
+                        WidthRequest="70">
+                        <ff:CachedImage.Transformations>
+                            <fftransform:TintTransformation HexColor="#000000" EnableSolidColor="true" />
+                        </ff:CachedImage.Transformations>
+                    </ffSvg:SvgCachedImage>
                 </Frame>
                 <forms:CachedImage
                     HeightRequest="110"
