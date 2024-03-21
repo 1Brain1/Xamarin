@@ -6,7 +6,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behavior="clr-namespace:CarouselView.Behaviors"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:Class="CarouselView.MdnDetailsPage">
+    x:Class="CarouselView.Pages.MdnDetailsPage">
 
     <Grid
         RowDefinitions="Auto, *, 3*">

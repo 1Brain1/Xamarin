@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <TabbedPage
-    xmlns:local="clr-namespace:CarouselView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="CarouselView.MainPage"
+    x:Class="CarouselView.Pages.MainPage"
     BackgroundColor="White"
     xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:pages="clr-namespace:CarouselView.Pages;assembly=CarouselView"
     NavigationPage.HasNavigationBar="False"
     android:TabbedPage.IsSwipePagingEnabled="False"
     android:TabbedPage.ToolbarPlacement="Bottom"
@@ -14,34 +14,34 @@
     SelectedTabColor="Red"
     UnselectedTabColor="Black">
 
-    <!--<local:MdnDetailsPage
+    <!--<pages:MdnDetailsPage
         Title="MdnDetails"
         IconImageSource="ic_mdn.png" />-->
 
-    <!--<local:ContactSupport
+    <!--<pages:ContactSupport
         Title="Contact Support"
         IconImageSource="ic_support.png" />-->
 
-    <!--<local:MonkeyPage
+    <!--<pages:MonkeyPage
         Title="MonkeyPage"
         IconImageSource="ic_monkey.png" />-->
-    
-    <local:NewProfile
+
+    <pages:NewProfile
         Title="NEW PROFILE" />
 
-    <local:Profile
-        Title="Profile"
-        IconImageSource="ic_monkey.png" />
+    <!-- <pages:Profile -->
+    <!--     Title="Profile" -->
+    <!--     IconImageSource="ic_monkey.png" /> -->
 
-    <!--<local:ProfilePopup
+    <!--<pages:ProfilePopup
         Title="Popup"
         IconImageSource="ic_monkey.png" />-->
 
-    <!--<local:NewsPage
+    <!--<pages:NewsPage
         Title="News"
         IconImageSource="ic_monkey.png" />-->
 
-    <!--<local:ListTest
+    <!--<pages:ListTest
         Title="Switch"
         IconImageSource="ic_monkey.png" />-->
 </TabbedPage>

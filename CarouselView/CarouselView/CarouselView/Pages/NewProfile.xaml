@@ -8,7 +8,7 @@
     xmlns:image="clr-namespace:CarouselView.Core.Resources;assembly=CarouselView"
     xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    x:Class="CarouselView.NewProfile">
+    x:Class="CarouselView.Pages.NewProfile">
 
     <ContentPage.Resources>
         <ResourceDictionary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace CarouselView
+namespace CarouselView.Models
 {
     public class Monkey
     {

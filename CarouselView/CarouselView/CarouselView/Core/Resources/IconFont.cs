@@ -12,7 +12,7 @@ namespace CarouselView.Core.Resources
         public const string Facebook = "\uea09";
         public const string Profile = "\uea0a";
         public const string NotificationOff = "\uea40";
-        
+
         public const string MenuProfile = "\uea3a";
         public const string MenuAccounts = "\uea4c";
         public const string MenuHome = "\uea51";

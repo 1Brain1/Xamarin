@@ -50,9 +50,7 @@ namespace CarouselView.Controls
             Command = new Command(() =>
             {
                 if (thumbFrame.TranslationX < maxX / 2)
-                {
                     thumbFrame.TranslateTo(maxX, 0, 250, Easing.CubicInOut);
-                }
                 else
                     thumbFrame.TranslateTo(0, 0, 250, Easing.CubicInOut);
                 UpdateMainFrameBackgroundColor(); // Обновляем цвет при нажатии
@@ -62,13 +60,9 @@ namespace CarouselView.Controls
         private void UpdateMainFrameBackgroundColor()
         {
             if (thumbFrame.TranslationX < maxX / 2)
-            {
                 mainFrame.BackgroundColor = Color.FromHex("#60E17C"); // Цвет, когда Switch включен
-            }
             else
-            {
                 mainFrame.BackgroundColor = Color.FromHex("#CCCCCC"); // Цвет, когда Switch выключен
-            }
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System.Collections.ObjectModel;
 using System.Net.Http;
+using CarouselView.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CarouselView
+namespace CarouselView.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonkeyPage : ContentPage

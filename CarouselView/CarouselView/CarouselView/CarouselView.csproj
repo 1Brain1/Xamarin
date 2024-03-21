@@ -25,6 +25,46 @@
         <Compile Update="Controls\Button.xaml.cs">
             <DependentUpon>Button.xaml</DependentUpon>
         </Compile>
+        <Compile Update="Pages\ContactSupport.xaml.cs">
+            <DependentUpon>ContactSupport.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\ListTest.xaml.cs">
+            <DependentUpon>ListTest.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\MainPage.xaml.cs">
+            <DependentUpon>MainPage.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\MdnDetailsPage.xaml.cs">
+            <DependentUpon>MdnDetailsPage.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\MonkeyPage.xaml.cs">
+            <DependentUpon>MonkeyPage.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\NewProfile.xaml.cs">
+            <DependentUpon>NewProfile.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\NewsPage.xaml.cs">
+            <DependentUpon>NewsPage.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\Profile.xaml.cs">
+            <DependentUpon>Profile.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\SvgPage.xaml.cs">
+            <DependentUpon>SvgPage.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Pages\ProfilePopup.xaml.cs">
+            <DependentUpon>ProfilePopup.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -41,24 +81,6 @@
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="Controls\MyCustomSwitch.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="ListTest.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="MdnDetailsPage.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="MonkeyPage.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="NewsPage.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Profile.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="ProfilePopup.xaml">
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
     </ItemGroup>

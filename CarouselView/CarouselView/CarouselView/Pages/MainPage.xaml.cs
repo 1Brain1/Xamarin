@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace CarouselView
+namespace CarouselView.Pages
 {
     public partial class MainPage : TabbedPage
     {

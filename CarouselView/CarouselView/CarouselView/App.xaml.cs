@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using CarouselView.Pages;
+using Xamarin.Forms;
 
 namespace CarouselView
 {

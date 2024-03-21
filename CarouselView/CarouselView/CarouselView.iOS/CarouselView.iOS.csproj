@@ -100,19 +100,19 @@
         </ImageAsset>
     </ItemGroup>
     <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.Xml" />
-        <Reference Include="System.Core" />
-        <Reference Include="Xamarin.iOS" />
+        <Reference Include="System"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="Xamarin.iOS"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012"/>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\CarouselView\CarouselView.csproj">
-        <Project>{066693f2-50a3-491c-83f0-8a61912c7eab}</Project>
-        <Name>CarouselView</Name>
-      </ProjectReference>
+        <ProjectReference Include="..\CarouselView\CarouselView.csproj">
+            <Project>{066693f2-50a3-491c-83f0-8a61912c7eab}</Project>
+            <Name>CarouselView</Name>
+        </ProjectReference>
     </ItemGroup>
-    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets"/>
 </Project>

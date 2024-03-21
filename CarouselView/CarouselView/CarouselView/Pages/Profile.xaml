@@ -8,7 +8,7 @@
     xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:Class="CarouselView.Profile">
+    x:Class="CarouselView.Pages.Profile">
 
     <ContentPage.Resources>
         <ResourceDictionary>
