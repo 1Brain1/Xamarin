@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:imageExtension="clr-namespace:CarouselView.MarkupExtension;assembly=CarouselView"
+             x:Class="CarouselView.Pages.SvgPage">
+    <Grid
+        Padding="10,50,10,0"
+        VerticalOptions="FillAndExpand"
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+        <StackLayout
+            BackgroundColor="Green"
+            Grid.Row="0">
+            <Label
+                Text="SVG IMAGE"
+                FontAttributes="Bold"
+                FontSize="Title"
+                TextColor="GreenYellow" />
+            <StackLayout
+                Spacing="10"
+                Orientation="Horizontal">
+                <ffSvg:SvgCachedImage
+                    BackgroundColor="Red"
+                    Source="{imageExtension:ImageResource ic_profile.svg}"
+                    HeightRequest="80"
+                    WidthRequest="80" />
+
+                <ffSvg:SvgCachedImage
+                    BackgroundColor="Red"
+                    Source="{imageExtension:ImageResource ic_valid.svg}"
+                    HeightRequest="80"
+                    WidthRequest="80" />
+
+                <ffSvg:SvgCachedImage
+                    BackgroundColor="Red"
+                    Source="{imageExtension:ImageResource ic_close.svg}"
+                    HeightRequest="80"
+                    WidthRequest="80" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="1"
+            VerticalOptions="End"
+            BackgroundColor="Blue">
+            <Label
+                Text="PNG IMAGE"
+                FontAttributes="Bold"
+                FontSize="Title"
+                TextColor="GreenYellow" />
+            <Image
+                Source="{imageExtension:ImageResource boom.png}" />
+        </StackLayout>
+
+        <StackLayout
+            BackgroundColor="Gray"
+            Grid.Row="2">
+            <Label
+                Text="FROM CODE"
+                FontAttributes="Bold"
+                FontSize="Title"
+                TextColor="GreenYellow" />
+            <ffSvg:SvgCachedImage
+                HorizontalOptions="Start"
+                Source="{Binding Image}"
+                HeightRequest="20"
+                WidthRequest="20">
+                <ff:CachedImage.Transformations>
+                    <fftransform:TintTransformation HexColor="#00D7D9" EnableSolidColor="true" />
+                </ff:CachedImage.Transformations>
+            </ffSvg:SvgCachedImage>
+
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="3"
+            BackgroundColor="Black">
+            <Label
+                Text="FROM CODE PNG"
+                FontAttributes="Bold"
+                FontSize="Title"
+                TextColor="GreenYellow" />
+            <ff:CachedImage
+                Source="{Binding ImageSource}"
+                HeightRequest="80"
+                WidthRequest="80" />
+        </StackLayout>
+
+        <StackLayout
+            BackgroundColor="Purple"
+            Grid.Row="4">
+            <StackLayout>
+                <Label
+                    Text="FROM CODE SVG CACHED"
+                    FontAttributes="Bold"
+                    FontSize="Title"
+                    TextColor="GreenYellow" />
+                <ff:CachedImage
+                    x:Name="svgCachedImageControl" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

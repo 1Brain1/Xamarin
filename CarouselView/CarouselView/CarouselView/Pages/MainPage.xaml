@@ -29,6 +29,9 @@
     <pages:NewProfile
         Title="NEW PROFILE" />
 
+    <pages:SvgPage
+        Title="SVG PAGE" />
+
     <!-- <pages:Profile -->
     <!--     Title="Profile" -->
     <!--     IconImageSource="ic_monkey.png" /> -->

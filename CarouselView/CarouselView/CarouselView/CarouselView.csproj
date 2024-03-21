@@ -14,11 +14,12 @@
     <ItemGroup>
         <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="SkiaSharp" Version="2.88.7" />
         <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6"/>
         <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982"/>
         <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982"/>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578"/>
-        <PackageReference Include="Xamarin.Essentials" Version="1.7.6"/>
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -83,5 +84,13 @@
         <EmbeddedResource Update="Controls\MyCustomSwitch.xaml">
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
+        <None Remove="Core\Resources\Images\ic_close.svg" />
+        <EmbeddedResource Include="Core\Resources\Images\ic_close.svg" />
+        <None Remove="Core\Resources\Images\ic_profile.svg" />
+        <EmbeddedResource Include="Core\Resources\Images\ic_profile.svg" />
+        <None Remove="Core\Resources\Images\ic_valid.svg" />
+        <EmbeddedResource Include="Core\Resources\Images\ic_valid.svg" />
+        <None Remove="Core\Resources\Images\boom.png" />
+        <EmbeddedResource Include="Core\Resources\Images\boom.png" />
     </ItemGroup>
 </Project>

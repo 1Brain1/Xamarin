@@ -106,7 +106,8 @@
         <Reference Include="Xamarin.iOS"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012"/>
+        <PackageReference Include="SkiaSharp" Version="2.88.7" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\CarouselView\CarouselView.csproj">
