@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CarouselView.Controls
+namespace CarouselView.Controls.Label
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Label

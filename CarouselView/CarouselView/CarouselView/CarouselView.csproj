@@ -66,6 +66,10 @@
             <DependentUpon>ProfilePopup.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Controls\Label\Label.xaml.cs">
+          <DependentUpon>Label.xaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -76,9 +80,6 @@
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="Controls\Carousel.xaml">
-            <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Controls\Label.xaml">
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="Controls\MyCustomSwitch.xaml">
