@@ -1,8 +1,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using CarouselView.Core.Resources;
+using CarouselView.Core;
 using CarouselView.Core.Validation;
+using FFImageLoading.Svg.Forms;
+using FFImageLoading.Transformations;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -97,7 +99,8 @@ namespace CarouselView.Controls
             typeof(ValidationEntry), FontAttributes.None);
 
         public static readonly BindableProperty MaskProperty = BindableProperty
-            .Create(nameof(Mask), typeof(string), typeof(ValidationEntry), default(ValidatableObject<string>), BindingMode.TwoWay);
+            .Create(nameof(Mask), typeof(string), typeof(ValidationEntry), default(ValidatableObject<string>),
+                BindingMode.TwoWay);
 
         public ValidationEntry()
         {
@@ -222,24 +225,13 @@ namespace CarouselView.Controls
 
             var valueIndex = 0;
             foreach (var maskChar in Mask)
-            {
                 if (maskChar == '0' && valueIndex < value.Length)
-                {
                     valueIndex++;
-                }
                 else if (maskChar != '0')
-                {
                     maskedText = maskedText.Insert(valueIndex, maskChar.ToString());
-                }
                 else
-                {
                     break;
-                }
-            }
         }
-
-
-
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -271,13 +263,23 @@ namespace CarouselView.Controls
             if (ValidatableText.Validations?.Count > 0 && IsEnabled)
             {
                 ErrorLabel.IsVisible = !ValidatableText.IsValid;
-                IconView.Text = ValidatableText.IsValid ? IconFont.Valid : IconFont.Close;
-                IconView.TextColor = ValidatableText.IsValid ? ValidatedColor : IconErrorColor;
+
+                var icon = ValidatableText.IsValid ? "ic_valid.svg" : "ic_close.svg";
+                var tintTransformation = new TintTransformation
+                {
+                    HexColor = ValidatableText.IsValid
+                        ? ValidatedColor.ToHex()
+                        : IconErrorColor.ToHex(),
+                    EnableSolidColor = true
+                };
+
+                IconView.Transformations.Add(tintTransformation);
+                IconView.Source = SvgImageSource.FromResource(Constants.ImagesFolder + icon);
             }
             else
             {
                 ErrorLabel.IsVisible = false;
-                IconView.Text = string.Empty;
+                IconView.Source = string.Empty;
             }
         }
 
@@ -300,7 +302,5 @@ namespace CarouselView.Controls
             ValidatableText.Validate();
             SetValid();
         }
-
-
     }
 }
