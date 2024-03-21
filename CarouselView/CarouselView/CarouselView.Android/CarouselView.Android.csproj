@@ -74,6 +74,9 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs"/>
+        <Compile Include="Renderers\MyCustomEntryRenderer.cs" />
+        <Compile Include="Renderers\MyEntryRenderer.cs" />
+        <Compile Include="Renderers\MyPickerRenderer.cs" />
         <Compile Include="Resources\Resource.designer.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
