@@ -25,6 +25,7 @@
                VerticalOptions="Center">
             <Frame.GestureRecognizers>
                 <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+                <TapGestureRecognizer Tapped="OnTaped" />
             </Frame.GestureRecognizers>
         </Frame>
     </Frame>
