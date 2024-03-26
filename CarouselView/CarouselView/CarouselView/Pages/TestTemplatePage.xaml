@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:CarouselView.Controls.Page;assembly=CarouselView"
+             x:Class="CarouselView.Pages.TestTemplatePage">
+        <StackLayout
+            BackgroundColor="Red">
+            <page:TemplatePage PageTitle="Login page">
+                <page:TemplatePage.Body>
+                    <StackLayout>
+                        <Entry Placeholder="email" />
+                        <Entry Placeholder="password" />
+                    </StackLayout>
+                </page:TemplatePage.Body>
+                <page:TemplatePage.Footer>
+                    <StackLayout
+                        VerticalOptions="EndAndExpand"
+                        Orientation="Horizontal">
+                        <Button Text="Cancel" />
+                        <Button Text="Login" />
+                    </StackLayout>
+                </page:TemplatePage.Footer>
+            </page:TemplatePage>
+        </StackLayout>
+</ContentPage>

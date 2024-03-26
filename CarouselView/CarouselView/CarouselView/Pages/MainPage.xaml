@@ -25,9 +25,13 @@
     <!--<pages:MonkeyPage
         Title="MonkeyPage"
         IconImageSource="ic_monkey.png" />-->
+    
+    <pages:TestTemplatePage 
+        Title="Test Template"/>
 
     <pages:NewProfile
         Title="NEW PROFILE" />
+
 
     <pages:SvgPage
         Title="SVG PAGE" />
