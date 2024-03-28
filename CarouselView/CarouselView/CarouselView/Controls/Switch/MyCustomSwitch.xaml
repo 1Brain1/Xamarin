@@ -3,30 +3,40 @@
 <StackLayout
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="CarouselView.Controls.MyCustomSwitch"
-    VerticalOptions="Center"
-    HorizontalOptions="Center">
-    <Frame x:Name="mainFrame"
-           HasShadow="False"
-           Padding="5"
-           WidthRequest="120"
-           HeightRequest="60"
-           BackgroundColor="#60E17C"
-           CornerRadius="37"
-           HorizontalOptions="Center"
-           VerticalOptions="Center">
-        <Frame x:Name="thumbFrame"
-               HasShadow="False"
-               Padding="0"
-               WidthRequest="60"
-               HeightRequest="60"
-               CornerRadius="30"
-               HorizontalOptions="Start"
-               VerticalOptions="Center">
-            <Frame.GestureRecognizers>
-                <PanGestureRecognizer PanUpdated="OnPanUpdated" />
-                <TapGestureRecognizer Tapped="OnTaped" />
-            </Frame.GestureRecognizers>
-        </Frame>
+    x:Class="CarouselView.Controls.MyCustomSwitch">
+    <Frame
+        VerticalOptions="Start"
+        HorizontalOptions="Start"
+        x:Name="mainFrame"
+        HasShadow="False"
+        Padding="0,0"
+        WidthRequest="120"
+        HeightRequest="60"
+        BackgroundColor="#60E17C"
+        CornerRadius="30">
+        <Frame
+            x:Name="thumbFrame"
+            HasShadow="False"
+            Padding="0"
+            WidthRequest="56"
+            HeightRequest="56"
+            CornerRadius="28"
+            HorizontalOptions="Start"
+            VerticalOptions="Center" />
+        
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTaped" />
+        </Frame.GestureRecognizers>
     </Frame>
+    
+    
+    <StackLayout Orientation="Horizontal">
+        <Label
+            HorizontalOptions="Start"
+            x:Name="eTotalX"/>
+        <Label
+            HorizontalOptions="EndAndExpand"
+            x:Name="TranslationX"/>
+    </StackLayout>
+    
 </StackLayout>
