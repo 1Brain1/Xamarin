@@ -9,7 +9,7 @@ namespace CarouselView.Controls
     public partial class MyCustomSwitch
     {
         private const int AnimationDuration = 250;
-        private const double ThumbPadding = 2;
+        private const double ThumbPadding = 4;
 
         private bool _isSwitchOn = true;
         private bool _isAnimationInProgress;
@@ -78,24 +78,28 @@ namespace CarouselView.Controls
         {
             var originalWidth = thumbFrame.Width;
             var mainFrameWidth = mainFrame.Width - ThumbPadding;
+            var enlargedWidth = originalWidth * 1.5;
 
-            var targetX = _isSwitchOn ? mainFrameWidth - originalWidth : ThumbPadding;
-
-            var thumbFrameBounds = new Rectangle(targetX, thumbFrame.Y, originalWidth, thumbFrame.Height);
-
+            var targetX = _isSwitchOn ? mainFrameWidth - enlargedWidth : ThumbPadding;
+            var thumbFrameBounds = new Rectangle(targetX, thumbFrame.Y, enlargedWidth, thumbFrame.Height);
             await thumbFrame.LayoutTo(thumbFrameBounds, AnimationDuration);
 
+            await Task.Delay(AnimationDuration / 3);
+
             UpdateMainFrameBackgroundColor();
+
+            targetX = _isSwitchOn ? mainFrameWidth - originalWidth : ThumbPadding;
+            var originalBounds = new Rectangle(targetX, thumbFrame.Y, originalWidth, thumbFrame.Height);
+            await thumbFrame.LayoutTo(originalBounds, AnimationDuration);
         }
+
 
         private void MainFrame_SizeChanged(object sender, EventArgs e)
         {
-            if (mainFrame.Width > 0)
-            {
-                UpdateThumbPosition();
+            if (!(mainFrame.Width > 0)) return;
+            UpdateThumbPosition();
 
-                mainFrame.SizeChanged -= MainFrame_SizeChanged;
-            }
+            mainFrame.SizeChanged -= MainFrame_SizeChanged;
         }
 
         private void UpdateMainFrameBackgroundColor()

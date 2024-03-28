@@ -10,19 +10,19 @@
         HorizontalOptions="Start"
         x:Name="mainFrame"
         HasShadow="False"
-        Padding="0"
+        Padding="0,3"
         WidthRequest="120"
         HeightRequest="60"
         BackgroundColor="#60E17C"
-        CornerRadius="30">
+        CornerRadius="32">
         <Frame
             x:Name="thumbFrame"
             HasShadow="False"
             Padding="0"
-            WidthRequest="56"
-            HeightRequest="56"
-            CornerRadius="28"
-            HorizontalOptions="Center"
+            WidthRequest="60"
+            HeightRequest="60"
+            CornerRadius="30"
+            HorizontalOptions="Start"
             VerticalOptions="CenterAndExpand" />
         <Frame.GestureRecognizers>
             <PanGestureRecognizer PanUpdated="OnPanUpdated" />
