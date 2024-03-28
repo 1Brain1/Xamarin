@@ -11,7 +11,7 @@ namespace CarouselView.Controls
         private const int AnimationDuration = 250;
         private const double ThumbPadding = 2;
 
-        private bool _isSwitchOn = false;
+        private bool _isSwitchOn = true;
         private bool _isAnimationInProgress;
 
         public MyCustomSwitch()
@@ -23,53 +23,6 @@ namespace CarouselView.Controls
             BindingContext = this;
         }
 
-        #region TapEvent
-
-        private async void OnTaped(object sender, EventArgs eventArgs)
-        {
-            if (_isAnimationInProgress) return;
-
-            _isAnimationInProgress = true;
-            await UpdateThumbPosition();
-            _isAnimationInProgress = false;
-        }
-
-        private async Task UpdateThumbPosition()
-        {
-            var originalWidth = thumbFrame.Width;
-            var changedWidth = originalWidth * 1.3;
-            var mainFrameWidth = mainFrame.Width - ThumbPadding * 2;
-
-            var targetX = _isSwitchOn ? mainFrameWidth - changedWidth : ThumbPadding;
-
-            var thumbFrameBounds = new Rectangle(targetX, thumbFrame.Y, changedWidth, thumbFrame.Height);
-
-            await thumbFrame.LayoutTo(thumbFrameBounds, AnimationDuration);
-
-
-            var newX = _isSwitchOn ? ThumbPadding : mainFrameWidth - originalWidth;
-
-            thumbFrameBounds = new Rectangle(newX, thumbFrame.Y, originalWidth, thumbFrame.Height);
-
-            await thumbFrame.LayoutTo(thumbFrameBounds, AnimationDuration);
-
-            _isSwitchOn = !_isSwitchOn;
-
-            UpdateMainFrameBackgroundColor();
-        }
-        
-        private void OnTaped1(object sender, EventArgs eventArgs)
-        {
-            _isSwitchOn = !_isSwitchOn;
-
-            thumbFrame.TranslationX = _isSwitchOn
-                ? mainFrame.Width - ThumbPadding - thumbFrame.Width
-                : ThumbPadding;
-
-            UpdateMainFrameBackgroundColor();
-        }
-
-        #endregion
 
         #region PanEvent
 
@@ -110,27 +63,44 @@ namespace CarouselView.Controls
 
         #endregion
 
-        #region Local
+
+        private async void OnTaped(object sender, EventArgs eventArgs)
+        {
+            if (_isAnimationInProgress) return;
+            _isSwitchOn = !_isSwitchOn;
+
+            _isAnimationInProgress = true;
+            await UpdateThumbPosition();
+            _isAnimationInProgress = false;
+        }
+
+        private async Task UpdateThumbPosition()
+        {
+            var originalWidth = thumbFrame.Width;
+            var mainFrameWidth = mainFrame.Width - ThumbPadding;
+
+            var targetX = _isSwitchOn ? mainFrameWidth - originalWidth : ThumbPadding;
+
+            var thumbFrameBounds = new Rectangle(targetX, thumbFrame.Y, originalWidth, thumbFrame.Height);
+
+            await thumbFrame.LayoutTo(thumbFrameBounds, AnimationDuration);
+
+            UpdateMainFrameBackgroundColor();
+        }
 
         private void MainFrame_SizeChanged(object sender, EventArgs e)
         {
-            if (!(mainFrame.Width > 0)) return;
+            if (mainFrame.Width > 0)
+            {
+                UpdateThumbPosition();
 
-            // _isSwitchOn = !_isSwitchOn;
-            // UpdateThumbPosition();
-
-            thumbFrame.TranslationX = _isSwitchOn
-                ? mainFrame.Width - ThumbPadding - thumbFrame.Width
-                : ThumbPadding;
-
-            mainFrame.SizeChanged -= MainFrame_SizeChanged;
+                mainFrame.SizeChanged -= MainFrame_SizeChanged;
+            }
         }
 
         private void UpdateMainFrameBackgroundColor()
         {
             mainFrame.BackgroundColor = _isSwitchOn ? Color.FromHex("#60E17C") : Color.FromHex("#CCCCCC");
         }
-
-        #endregion
     }
 }

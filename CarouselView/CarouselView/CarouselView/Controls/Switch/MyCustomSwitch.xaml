@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <StackLayout
+    x:Name="parent"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CarouselView.Controls.MyCustomSwitch">
@@ -9,7 +10,7 @@
         HorizontalOptions="Start"
         x:Name="mainFrame"
         HasShadow="False"
-        Padding="0,0"
+        Padding="0"
         WidthRequest="120"
         HeightRequest="60"
         BackgroundColor="#60E17C"
@@ -21,10 +22,10 @@
             WidthRequest="56"
             HeightRequest="56"
             CornerRadius="28"
-            HorizontalOptions="Start"
-            VerticalOptions="Center" />
-        
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
         <Frame.GestureRecognizers>
+            <PanGestureRecognizer PanUpdated="OnPanUpdated" />
             <TapGestureRecognizer Tapped="OnTaped" />
         </Frame.GestureRecognizers>
     </Frame>
